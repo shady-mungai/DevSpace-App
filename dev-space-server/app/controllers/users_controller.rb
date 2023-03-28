@@ -6,8 +6,6 @@ class UsersController < ApplicationController
     end
 
     def show
-       # get_user,include: reviews
-       # render json: super, include: reviews 
        user = User.find(params[:id])
        render json: user,include: :articles, status: :ok
 
