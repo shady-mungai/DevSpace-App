@@ -3804,3 +3804,199 @@ FOREIGN KEY ("tag_id")
   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   [1m[36mReview Create (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("content", "likes", "article_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["content", "Dicta est commodi. Rerum eius beatae. Qui aliquam nihil."], ["likes", 3], ["article_id", 6], ["user_id", 1], ["created_at", "2023-03-28 11:55:02.577444"], ["updated_at", "2023-03-28 11:55:02.577444"]]
   [1m[36mTRANSACTION (6.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/users" for 127.0.0.1 at 2023-03-28 15:07:04 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+Started GET "/users" for 127.0.0.1 at 2023-03-28 15:07:40 +0300
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+Started GET "/users" for 127.0.0.1 at 2023-03-28 15:07:51 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"strength"=>"weak", "power_id"=>2, "hero_id"=>4, "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.1ms)
+Completed 200 OK in 42ms (Views: 35.0ms | ActiveRecord: 1.1ms | Allocations: 24194)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2023-03-28 15:10:40 +0300
+Processing by UsersController#show as */*
+  Parameters: {"strength"=>"weak", "power_id"=>2, "hero_id"=>4, "id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `get_user'
+No template found for UsersController#show, rendering head :no_content
+Completed 204 No Content in 6ms (ActiveRecord: 1.1ms | Allocations: 4250)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2023-03-28 15:12:05 +0300
+Processing by UsersController#show as */*
+  Parameters: {"strength"=>"weak", "power_id"=>2, "hero_id"=>4, "id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `get_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.25ms)
+Completed 200 OK in 6ms (Views: 1.4ms | ActiveRecord: 1.0ms | Allocations: 3023)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2023-03-28 15:12:11 +0300
+Processing by UsersController#show as */*
+  Parameters: {"strength"=>"weak", "power_id"=>2, "hero_id"=>4, "id"=>"3", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `get_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.38ms)
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 724)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2023-03-28 15:13:16 +0300
+Processing by UsersController#show as */*
+  Parameters: {"strength"=>"weak", "power_id"=>2, "hero_id"=>4, "id"=>"3", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `get_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.27ms)
+Completed 500 Internal Server Error in 10ms (Views: 1.3ms | ActiveRecord: 0.9ms | Allocations: 5902)
+
+
+  
+NameError (undefined local variable or method `user' for #<UsersController:0x000000000140c8>
+Did you mean?  super):
+  
+app/controllers/users_controller.rb:10:in `show'
+Started GET "/users/3" for 127.0.0.1 at 2023-03-28 15:13:53 +0300
+Processing by UsersController#show as */*
+  Parameters: {"strength"=>"weak", "power_id"=>2, "hero_id"=>4, "id"=>"3", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `get_user'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.23ms)
+Completed 500 Internal Server Error in 10ms (Views: 1.2ms | ActiveRecord: 0.9ms | Allocations: 5640)
+
+
+  
+NoMethodError (super: no superclass method `show' for #<UsersController:0x00000000017d18>):
+  
+app/controllers/users_controller.rb:10:in `show'
+Started GET "/users/3" for 127.0.0.1 at 2023-03-28 15:14:26 +0300
+  
+SyntaxError (/home/shadi/Development/projects/phase-4-project/dev-space-server/app/controllers/users_controller.rb:9: syntax error, unexpected tLABEL, expecting '='
+        get_user,include: reviews
+                 ^~~~~~~~
+):
+  
+app/controllers/users_controller.rb:9: syntax error, unexpected tLABEL, expecting '='
+app/controllers/users_controller.rb:9: syntax error, unexpected tLABEL, expecting '='
+app/controllers/users_controller.rb:9: syntax error, unexpected tLABEL, expecting '='
+Started GET "/users/3" for 127.0.0.1 at 2023-03-28 15:15:02 +0300
+  
+SyntaxError (/home/shadi/Development/projects/phase-4-project/dev-space-server/app/controllers/users_controller.rb:12: syntax error, unexpected tLABEL, expecting `do' or '{' or '('
+... user,include: articles status: :ok
+...                        ^~~~~~~
+):
+  
+app/controllers/users_controller.rb:12: syntax error, unexpected tLABEL, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:12: syntax error, unexpected tLABEL, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:12: syntax error, unexpected tLABEL, expecting `do' or '{' or '('
+Started GET "/users/3" for 127.0.0.1 at 2023-03-28 15:15:22 +0300
+  
+SyntaxError (/home/shadi/Development/projects/phase-4-project/dev-space-server/app/controllers/users_controller.rb:12: syntax error, unexpected local variable or method, expecting `end'
+... user,include: :articles status: :ok
+...                         ^~~~~~
+):
+  
+app/controllers/users_controller.rb:12: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/users_controller.rb:12: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/users_controller.rb:12: syntax error, unexpected local variable or method, expecting `end'
+Started GET "/users/3" for 127.0.0.1 at 2023-03-28 15:16:26 +0300
+  
+SyntaxError (/home/shadi/Development/projects/phase-4-project/dev-space-server/app/controllers/users_controller.rb:12: syntax error, unexpected local variable or method, expecting `end'
+... user,include: :articles status: :ok
+...                         ^~~~~~
+):
+  
+app/controllers/users_controller.rb:12: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/users_controller.rb:12: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/users_controller.rb:12: syntax error, unexpected local variable or method, expecting `end'
+Started GET "/users/3" for 127.0.0.1 at 2023-03-28 15:18:57 +0300
+  
+SyntaxError (/home/shadi/Development/projects/phase-4-project/dev-space-server/app/controllers/users_controller.rb:12: syntax error, unexpected local variable or method, expecting `end'
+... user,include: :articles status: :ok
+...                         ^~~~~~
+):
+  
+app/controllers/users_controller.rb:12: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/users_controller.rb:12: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/users_controller.rb:12: syntax error, unexpected local variable or method, expecting `end'
+Started GET "/users/3" for 127.0.0.1 at 2023-03-28 15:19:07 +0300
+  
+SyntaxError (/home/shadi/Development/projects/phase-4-project/dev-space-server/app/controllers/users_controller.rb:12: syntax error, unexpected tLABEL, expecting `do' or '{' or '('
+... user,include: articles status: :ok
+...                        ^~~~~~~
+):
+  
+app/controllers/users_controller.rb:12: syntax error, unexpected tLABEL, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:12: syntax error, unexpected tLABEL, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:12: syntax error, unexpected tLABEL, expecting `do' or '{' or '('
+Started GET "/users/3" for 127.0.0.1 at 2023-03-28 15:19:23 +0300
+Processing by UsersController#show as */*
+  Parameters: {"strength"=>"weak", "power_id"=>2, "hero_id"=>4, "id"=>"3", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.25ms)
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 1.0ms | Allocations: 3117)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2023-03-28 15:19:31 +0300
+Processing by UsersController#show as */*
+  Parameters: {"strength"=>"weak", "power_id"=>2, "hero_id"=>4, "id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.22ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 723)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2023-03-28 15:19:42 +0300
+Processing by UsersController#show as */*
+  Parameters: {"strength"=>"weak", "power_id"=>2, "hero_id"=>4, "id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.9ms | Allocations: 5255)
+
+
+  
+NameError (undefined local variable or method `articles' for #<UsersController:0x000000000317b8>):
+  
+app/controllers/users_controller.rb:12:in `show'
+Started GET "/users/1" for 127.0.0.1 at 2023-03-28 15:19:52 +0300
+Processing by UsersController#show as */*
+  Parameters: {"strength"=>"weak", "power_id"=>2, "hero_id"=>4, "id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 10ms (Views: 1.9ms | ActiveRecord: 2.4ms | Allocations: 3097)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2023-03-28 15:22:05 +0300
+Processing by UsersController#show as */*
+  Parameters: {"strength"=>"weak", "power_id"=>2, "hero_id"=>4, "id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.25ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 725)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2023-03-28 15:24:21 +0300
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:12:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (43.19ms)
+Completed 200 OK in 65ms (Views: 52.0ms | ActiveRecord: 1.6ms | Allocations: 34471)
+
+
