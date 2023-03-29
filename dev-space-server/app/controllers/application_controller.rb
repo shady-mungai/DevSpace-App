@@ -1,7 +1,10 @@
 class ApplicationController < ActionController::API
     include ActionController::Cookies
+    def user 
+        user = User.find_by(id: session[:user_id])
+    end
 
-    def save_user(email)
-        session[:email] = email
+    def save_user(id)
+        session[:uid] = id
     end
 end

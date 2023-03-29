@@ -1,15 +1,15 @@
-class ArticlesController < ApplicationController
-    # GET all articles
-    def index 
+class ArticlesController < ApplicationController 
+
+    def index
       articles = Article.all
       render json: articles
     end
-  
+
     # POST create a new article
     def create
-      article = Article.create!(article_params)
+      article = user.articles.create!(article_params)
       if article
-        render json: article, status: :created
+        render json: article,status: :created
       else
         render json: {error: article.errors.full_messages}, status: :unprocessable_entity
       end
@@ -18,6 +18,6 @@ class ArticlesController < ApplicationController
     private
   
     def article_params
-      params.permit(:title,:topic_language,:content,:user_id)
+      params.permit(:title,:topic_language,:content)
     end
-  end
+end
