@@ -9751,3 +9751,1260 @@ Processing by UsersController#create as */*
 Completed 200 OK in 249ms (Views: 9.7ms | ActiveRecord: 8.4ms | Allocations: 12496)
 
 
+Started GET "/users/login" for 127.0.0.1 at 2023-03-28 22:14:09 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 404 Not Found in 23ms (ActiveRecord: 1.1ms | Allocations: 10182)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=login):
+  
+app/controllers/users_controller.rb:11:in `show'
+Started POST "/users" for 127.0.0.1 at 2023-03-28 22:33:07 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"shadzz", "email"=>"shad@gmail.com", "password"=>"[FILTERED]", "bio"=>"Ruby is the best language i have experiences better than English i suppose", "user"=>{"username"=>"shadzz", "email"=>"shad@gmail.com", "bio"=>"Ruby is the best language i have experiences better than English i suppose"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.3ms | Allocations: 432)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.4.3) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.4.3) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+actionpack (7.0.4.3) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4.3) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4.3) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4.3) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4.3) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4.3) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.6.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.6.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.6.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/users" for 127.0.0.1 at 2023-03-28 22:34:35 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"shadzz", "email"=>"shad@gmail.com", "password"=>"[FILTERED]", "bio"=>"Ruby is the best language i have experiences better than English i suppose", "user"=>{"username"=>"shadzz", "email"=>"shad@gmail.com", "bio"=>"Ruby is the best language i have experiences better than English i suppose"}}
+Can't verify CSRF token authenticity.
+[31mUnpermitted parameters: :password, :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f27e8152f90>, params: {"username"=>"shadzz", "email"=>"shad@gmail.com", "password"=>"[FILTERED]", "bio"=>"Ruby is the best language i have experiences better than English i suppose", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"shadzz", "email"=>"shad@gmail.com", "bio"=>"Ruby is the best language i have experiences better than English i suppose"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "shadzz"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shad@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+Completed 422 Unprocessable Entity in 1338ms (ActiveRecord: 1.3ms | Allocations: 1044071)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password can't be blank, Password digest can't be blank):
+  
+app/controllers/users_controller.rb:17:in `create'
+Started POST "/users" for 127.0.0.1 at 2023-03-28 22:34:52 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"shadzz", "email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]", "bio"=>"Ruby is the best language i have experiences better than English i suppose", "user"=>{"username"=>"shadzz", "email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]", "bio"=>"Ruby is the best language i have experiences better than English i suppose"}}
+Can't verify CSRF token authenticity.
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f27e8727cb8>, params: {"username"=>"shadzz", "email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]", "bio"=>"Ruby is the best language i have experiences better than English i suppose", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"shadzz", "email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]", "bio"=>"Ruby is the best language i have experiences better than English i suppose"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "shadzz"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shad@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "shadzz"], ["email", "shad@gmail.com"], ["password_digest", "[FILTERED]"], ["bio", "Ruby is the best language i have experiences better than English i suppose"], ["created_at", "2023-03-28 19:34:52.353889"], ["updated_at", "2023-03-28 19:34:52.353889"]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:19:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (28.81ms)
+Completed 201 Created in 63ms (Views: 45.2ms | ActiveRecord: 6.6ms | Allocations: 22927)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-28 22:35:38 +0300
+  
+AbstractController::ActionNotFound (The action 'login' could not be found for UsersController):
+  
+actionpack (7.0.4.3) lib/abstract_controller/base.rb:146:in `process'
+actionview (7.0.4.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.6.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.6.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.6.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/login" for 127.0.0.1 at 2023-03-28 22:36:41 +0300
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]", "user"=>{"email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shad@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `login'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.0ms | Allocations: 5046)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<UsersController:0x00000000015608>):
+  
+app/controllers/users_controller.rb:27:in `login'
+Started POST "/login" for 127.0.0.1 at 2023-03-28 22:54:47 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]", "session"=>{"email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.4ms | Allocations: 6528)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<SessionsController:0x00000000019320>):
+  
+app/controllers/sessions_controller.rb:6:in `create'
+Started POST "/login" for 127.0.0.1 at 2023-03-28 23:00:01 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]", "session"=>{"email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.6ms | Allocations: 6752)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<SessionsController:0x0000000001d060>):
+  
+app/controllers/sessions_controller.rb:6:in `create'
+Started POST "/login" for 127.0.0.1 at 2023-03-28 23:00:10 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]", "session"=>{"email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.7ms | Allocations: 10867)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<SessionsController:0x00000000009970>):
+  
+app/controllers/sessions_controller.rb:6:in `create'
+Started POST "/login" for 127.0.0.1 at 2023-03-28 23:31:27 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]", "session"=>{"email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shad@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.8ms | Allocations: 22664)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<SessionsController:0x0000000000d9d0>):
+  
+app/controllers/sessions_controller.rb:6:in `create'
+Started POST "/login" for 127.0.0.1 at 2023-03-28 23:31:39 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]", "session"=>{"email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shad@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 1.0ms | Allocations: 26924)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<SessionsController:0x000000000099e8>):
+  
+app/controllers/sessions_controller.rb:6:in `create'
+Started POST "/login" for 127.0.0.1 at 2023-03-28 23:42:04 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]", "session"=>{"email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shad@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.8ms | Allocations: 26924)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<SessionsController:0x000000000099e8>):
+  
+app/controllers/sessions_controller.rb:6:in `create'
+Started POST "/login" for 127.0.0.1 at 2023-03-28 23:42:51 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]", "session"=>{"email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (Allocations: 412)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.4.3) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.4.3) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+actionpack (7.0.4.3) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4.3) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4.3) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4.3) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4.3) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4.3) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.6.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.6.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.6.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/login" for 127.0.0.1 at 2023-03-28 23:43:22 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]", "session"=>{"email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shad@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.3ms | Allocations: 7643)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<SessionsController:0x00000000011648>):
+  
+app/controllers/sessions_controller.rb:6:in `create'
+Started POST "/login" for 127.0.0.1 at 2023-03-28 23:43:36 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]", "session"=>{"email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shad@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.8ms | Allocations: 23802)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<SessionsController:0x000000000099e8>):
+  
+app/controllers/sessions_controller.rb:6:in `create'
+Started POST "/login" for 127.0.0.1 at 2023-03-28 23:50:59 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]", "session"=>{"email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shad@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.7ms | Allocations: 7193)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<SessionsController:0x0000000000d9d0>):
+  
+app/controllers/sessions_controller.rb:6:in `create'
+Started POST "/login" for 127.0.0.1 at 2023-03-28 23:52:58 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]", "session"=>{"email"=>"shad@gmail.com", "password_digest"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shad@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.0ms | Allocations: 5767)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/sessions_controller.rb:6:in `create'
+Started POST "/users" for 127.0.0.1 at 2023-03-28 23:57:39 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"babayaga", "email"=>"baba@gmail.com", "password"=>"[FILTERED]", "bio"=>"JS for life", "user"=>{"username"=>"babayaga", "email"=>"baba@gmail.com", "bio"=>"JS for life"}}
+[31mUnpermitted parameters: :password, :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f2dac013610>, params: {"username"=>"babayaga", "email"=>"baba@gmail.com", "password"=>"[FILTERED]", "bio"=>"JS for life", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"babayaga", "email"=>"baba@gmail.com", "bio"=>"JS for life"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "babayaga"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "baba@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+Completed 422 Unprocessable Entity in 247ms (ActiveRecord: 0.4ms | Allocations: 353076)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password digest can't be blank, Password can't be blank):
+  
+app/controllers/users_controller.rb:19:in `create'
+Started POST "/users" for 127.0.0.1 at 2023-03-29 00:02:52 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"babayaga", "email"=>"baba@gmail.com", "password"=>"[FILTERED]", "bio"=>"JS for life", "user"=>{"username"=>"babayaga", "email"=>"baba@gmail.com", "bio"=>"JS for life"}}
+[31mUnpermitted parameters: :password, :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f2da412daa8>, params: {"username"=>"babayaga", "email"=>"baba@gmail.com", "password"=>"[FILTERED]", "bio"=>"JS for life", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"babayaga", "email"=>"baba@gmail.com", "bio"=>"JS for life"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "babayaga"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "baba@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+Completed 422 Unprocessable Entity in 9ms (ActiveRecord: 1.3ms | Allocations: 5335)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password can't be blank):
+  
+app/controllers/users_controller.rb:19:in `create'
+Started POST "/users" for 127.0.0.1 at 2023-03-29 00:03:11 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"babayaga", "email"=>"baba@gmail.com", "password"=>"[FILTERED]", "bio"=>"JS for life", "user"=>{"username"=>"babayaga", "email"=>"baba@gmail.com", "bio"=>"JS for life"}}
+[31mUnpermitted parameters: :password, :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fd2c4bcc4d0>, params: {"username"=>"babayaga", "email"=>"baba@gmail.com", "password"=>"[FILTERED]", "bio"=>"JS for life", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"babayaga", "email"=>"baba@gmail.com", "bio"=>"JS for life"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "babayaga"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "baba@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+Completed 422 Unprocessable Entity in 291ms (ActiveRecord: 1.5ms | Allocations: 369953)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password can't be blank):
+  
+app/controllers/users_controller.rb:19:in `create'
+Started POST "/users" for 127.0.0.1 at 2023-03-29 00:07:32 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"babayaga", "email"=>"baba@gmail.com", "password"=>"[FILTERED]", "bio"=>"JS for life", "user"=>{"username"=>"babayaga", "email"=>"baba@gmail.com", "bio"=>"JS for life"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fd2c60a8958>, params: {"username"=>"babayaga", "email"=>"baba@gmail.com", "password"=>"[FILTERED]", "bio"=>"JS for life", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"babayaga", "email"=>"baba@gmail.com", "bio"=>"JS for life"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "babayaga"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "baba@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "babayaga"], ["email", "baba@gmail.com"], ["password_digest", "[FILTERED]"], ["bio", "JS for life"], ["created_at", "2023-03-28 21:07:32.581600"], ["updated_at", "2023-03-28 21:07:32.581600"]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 12]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:21:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (12.51ms)
+Completed 201 Created in 309ms (Views: 19.0ms | ActiveRecord: 10.2ms | Allocations: 20688)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-29 00:08:34 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"baba@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"baba@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "baba@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 12]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:8:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (6.89ms)
+Completed 200 OK in 263ms (Views: 7.6ms | ActiveRecord: 1.3ms | Allocations: 13298)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 08:56:22 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"jamnjeri", "email"=>"njeri@gmail.com", "password"=>"[FILTERED]", "bio"=>"Love JS", "user"=>{"username"=>"jamnjeri", "email"=>"njeri@gmail.com", "bio"=>"Love JS"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f84fcb4c0e8>, params: {"username"=>"jamnjeri", "email"=>"njeri@gmail.com", "password"=>"[FILTERED]", "bio"=>"Love JS", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"jamnjeri", "email"=>"njeri@gmail.com", "bio"=>"Love JS"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "jamnjeri"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "njeri@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "jamnjeri"], ["email", "njeri@gmail.com"], ["password_digest", "[FILTERED]"], ["bio", "Love JS"], ["created_at", "2023-03-29 05:56:22.543200"], ["updated_at", "2023-03-29 05:56:22.543200"]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 13]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (16.4ms)
+Completed 201 Created in 289ms (Views: 27.1ms | ActiveRecord: 7.8ms | Allocations: 36343)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-29 09:01:05 +0300
+Processing by SessionsController#login as */*
+  Parameters: {"email"=>"njeri@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"njeri@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "njeri@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `login'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 13]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:11:in `login'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.37ms)
+Completed 200 OK in 228ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 2019)
+
+
+Started GET "/articles" for 127.0.0.1 at 2023-03-29 09:11:51 +0300
+Processing by ArticlesController#index as */*
+  Parameters: {"description"=>"gives the wielder super-human strengths", "article"=>{}}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 2]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 2]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 3]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 3]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 4]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 4]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 5]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 5]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 6]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 6]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 7]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 7]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 8]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 8]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 9]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 9]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 10]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 10]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 11]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 11]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 12]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 12]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 13]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 13]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 14]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 14]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 15]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 15]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 16]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 16]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 17]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 17]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 18]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 18]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 19]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 19]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 20]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 20]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (266.95ms)
+Completed 200 OK in 295ms (Views: 286.0ms | ActiveRecord: 9.3ms | Allocations: 141272)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 10:34:55 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Jeff", "email"=>"jeffgichuki68@gmail.com", "password"=>"[FILTERED]", "bio"=>"junior dev", "user"=>{"username"=>"Jeff", "email"=>"jeffgichuki68@gmail.com", "bio"=>"junior dev"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f85000fa500>, params: {"username"=>"Jeff", "email"=>"jeffgichuki68@gmail.com", "password"=>"[FILTERED]", "bio"=>"junior dev", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"Jeff", "email"=>"jeffgichuki68@gmail.com", "bio"=>"junior dev"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jeff"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jeffgichuki68@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "Jeff"], ["email", "jeffgichuki68@gmail.com"], ["password_digest", "[FILTERED]"], ["bio", "junior dev"], ["created_at", "2023-03-29 07:34:55.399919"], ["updated_at", "2023-03-29 07:34:55.399919"]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (8.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering welcome_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered welcome_mailer/welcome_email.html.erb within layouts/mailer (Duration: 1.0ms | Allocations: 311)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.9ms | Allocations: 554)
+WelcomeMailer#welcome_email: processed outbound mail in 24.2ms
+Delivered mail 6423ea1f73886_2eb42be823813@shadi-hp.mail (49.9ms)
+Date: Wed, 29 Mar 2023 10:34:55 +0300
+From: from@example.com
+To: jeffgichuki68@gmail.com
+Message-ID: <6423ea1f73886_2eb42be823813@shadi-hp.mail>
+Subject: Welcome to Dev-Space!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome to Dev-Space</h1>
+<p>Ready to be a developer?</p>
+  </body>
+</html>
+
+[active_model_serializers]   [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 14]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:24:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (7.12ms)
+Completed 201 Created in 381ms (Views: 8.1ms | ActiveRecord: 9.2ms | Allocations: 70921)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 10:44:53 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"shadiiiii", "email"=>"shadrackmungai10@gmail.com", "password"=>"[FILTERED]", "bio"=>"junior dev", "user"=>{"username"=>"shadiiiii", "email"=>"shadrackmungai10@gmail.com", "bio"=>"junior dev"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f84f80129d8>, params: {"username"=>"shadiiiii", "email"=>"shadrackmungai10@gmail.com", "password"=>"[FILTERED]", "bio"=>"junior dev", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"shadiiiii", "email"=>"shadrackmungai10@gmail.com", "bio"=>"junior dev"}} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "shadiiiii"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shadrackmungai10@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "shadiiiii"], ["email", "shadrackmungai10@gmail.com"], ["password_digest", "[FILTERED]"], ["bio", "junior dev"], ["created_at", "2023-03-29 07:44:53.492206"], ["updated_at", "2023-03-29 07:44:53.492206"]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering welcome_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered welcome_mailer/welcome_email.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.2ms | Allocations: 83)
+WelcomeMailer#welcome_email: processed outbound mail in 1.3ms
+Delivered mail 6423ec757b25c_2eb42c10239c6@shadi-hp.mail (1.2ms)
+Date: Wed, 29 Mar 2023 10:44:53 +0300
+From: from@example.com
+To: shadrackmungai10@gmail.com
+Message-ID: <6423ec757b25c_2eb42c10239c6@shadi-hp.mail>
+Subject: Welcome to Dev-Space!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome to Dev-Space</h1>
+<p>Ready to be a developer?</p>
+  </body>
+</html>
+
+[active_model_serializers]   [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 15]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:24:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.78ms)
+Completed 201 Created in 263ms (Views: 2.1ms | ActiveRecord: 9.0ms | Allocations: 7435)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 10:51:54 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"shadiiiii", "email"=>"jeffgichuki68@gmail.com", "password"=>"[FILTERED]", "bio"=>"junior dev", "user"=>{"username"=>"shadiiiii", "email"=>"jeffgichuki68@gmail.com", "bio"=>"junior dev"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f84fcf4b108>, params: {"username"=>"shadiiiii", "email"=>"jeffgichuki68@gmail.com", "password"=>"[FILTERED]", "bio"=>"junior dev", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"shadiiiii", "email"=>"jeffgichuki68@gmail.com", "bio"=>"junior dev"}} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "shadiiiii"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jeffgichuki68@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "shadiiiii"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jeffgichuki68@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+Completed 500 Internal Server Error in 477ms (ActiveRecord: 1.0ms | Allocations: 355971)
+
+
+  
+ArgumentError (Unrecognized status code :unprocessible_entity):
+  
+app/controllers/users_controller.rb:26:in `create'
+Started POST "/users" for 127.0.0.1 at 2023-03-29 10:53:18 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"shadiiiii", "email"=>"jeffgichuki68@gmail.com", "password"=>"[FILTERED]", "bio"=>"junior dev", "user"=>{"username"=>"shadiiiii", "email"=>"jeffgichuki68@gmail.com", "bio"=>"junior dev"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f84f4109728>, params: {"username"=>"shadiiiii", "email"=>"jeffgichuki68@gmail.com", "password"=>"[FILTERED]", "bio"=>"junior dev", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"shadiiiii", "email"=>"jeffgichuki68@gmail.com", "bio"=>"junior dev"}} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "shadiiiii"], ["email", "jeffgichuki68@gmail.com"], ["password_digest", "[FILTERED]"], ["bio", "junior dev"], ["created_at", "2023-03-29 07:53:18.631043"], ["updated_at", "2023-03-29 07:53:18.631043"]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (8.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering welcome_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered welcome_mailer/welcome_email.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.2ms | Allocations: 83)
+WelcomeMailer#welcome_email: processed outbound mail in 1.9ms
+Delivered mail 6423ee6e9e32a_2eb42bfc240cc@shadi-hp.mail (1.3ms)
+Date: Wed, 29 Mar 2023 10:53:18 +0300
+From: from@example.com
+To: jeffgichuki68@gmail.com
+Message-ID: <6423ee6e9e32a_2eb42bfc240cc@shadi-hp.mail>
+Subject: Welcome to Dev-Space!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome to Dev-Space</h1>
+<p>Ready to be a developer?</p>
+  </body>
+</html>
+
+[active_model_serializers]   [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 16]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:24:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (8.81ms)
+Completed 201 Created in 265ms (Views: 9.5ms | ActiveRecord: 10.5ms | Allocations: 17548)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 10:54:36 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"shadiiiii", "email"=>"shadrackmungai10@gmail.com", "password"=>"[FILTERED]", "bio"=>"junior dev", "user"=>{"username"=>"shadiiiii", "email"=>"shadrackmungai10@gmail.com", "bio"=>"junior dev"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fcf244af9e8>, params: {"username"=>"shadiiiii", "email"=>"shadrackmungai10@gmail.com", "password"=>"[FILTERED]", "bio"=>"junior dev", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"shadiiiii", "email"=>"shadrackmungai10@gmail.com", "bio"=>"junior dev"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "shadiiiii"], ["email", "shadrackmungai10@gmail.com"], ["password_digest", "[FILTERED]"], ["bio", "junior dev"], ["created_at", "2023-03-29 07:54:36.755196"], ["updated_at", "2023-03-29 07:54:36.755196"]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering welcome_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered welcome_mailer/welcome_email.html.erb within layouts/mailer (Duration: 0.8ms | Allocations: 311)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.4ms | Allocations: 554)
+WelcomeMailer#welcome_email: processed outbound mail in 12.7ms
+Delivered mail 6423eebcc42a8_4f082bd4-472@shadi-hp.mail (5072.8ms)
+Date: Wed, 29 Mar 2023 10:54:36 +0300
+From: from@example.com
+To: shadrackmungai10@gmail.com
+Message-ID: <6423eebcc42a8_4f082bd4-472@shadi-hp.mail>
+Subject: Welcome to Dev-Space!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome to Dev-Space</h1>
+<p>Ready to be a developer?</p>
+  </body>
+</html>
+
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 17]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:24:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (23.73ms)
+Completed 201 Created in 5426ms (Views: 48.2ms | ActiveRecord: 9.5ms | Allocations: 82168)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 11:16:35 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Njeri", "email"=>"jamnjeri@gmail.com", "password"=>"[FILTERED]", "bio"=>"Mfanyikazi mwema mwenye bidii", "user"=>{"username"=>"Njeri", "email"=>"jamnjeri@gmail.com", "bio"=>"Mfanyikazi mwema mwenye bidii"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fcf34402800>, params: {"username"=>"Njeri", "email"=>"jamnjeri@gmail.com", "password"=>"[FILTERED]", "bio"=>"Mfanyikazi mwema mwenye bidii", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"Njeri", "email"=>"jamnjeri@gmail.com", "bio"=>"Mfanyikazi mwema mwenye bidii"}} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "Njeri"], ["email", "jamnjeri@gmail.com"], ["password_digest", "[FILTERED]"], ["bio", "Mfanyikazi mwema mwenye bidii"], ["created_at", "2023-03-29 08:16:35.316100"], ["updated_at", "2023-03-29 08:16:35.316100"]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (8.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering welcome_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered welcome_mailer/welcome_email.html.erb within layouts/mailer (Duration: 0.4ms | Allocations: 114)
+  Rendered layout layouts/mailer.html.erb (Duration: 2.5ms | Allocations: 346)
+WelcomeMailer#welcome_email: processed outbound mail in 9.2ms
+Delivered mail 6423f3e352946_4f082bfc-34f@shadi-hp.mail (9676.6ms)
+Date: Wed, 29 Mar 2023 11:16:35 +0300
+From: from@example.com
+To: jamnjeri@gmail.com
+Message-ID: <6423f3e352946_4f082bfc-34f@shadi-hp.mail>
+Subject: Welcome to Dev-Space!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome to Dev-Space</h1>
+<p>Ready to be a developer?</p>
+  </body>
+</html>
+
+[active_model_serializers]   [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 18]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:24:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (5.63ms)
+Completed 201 Created in 9955ms (Views: 8.7ms | ActiveRecord: 9.7ms | Allocations: 7848)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 11:40:42 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started GET "/login" for 127.0.0.1 at 2023-03-29 11:41:08 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started POST "/login" for 127.0.0.1 at 2023-03-29 11:42:24 +0300
+Processing by SessionsController#login as */*
+  Parameters: {"email"=>"jamnjeri@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jamnjeri@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jamnjeri@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `login'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 18]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:11:in `login'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.77ms)
+Completed 200 OK in 252ms (Views: 2.1ms | ActiveRecord: 0.7ms | Allocations: 2465)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-03-29 11:42:43 +0300
+Processing by UsersController#index as */*
+  Parameters: {"email"=>"jamnjeri@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"jamnjeri@gmail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 6]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 7]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 8]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 9]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 12]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 13]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 14]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 15]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 16]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 17]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 18]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (57.36ms)
+Completed 200 OK in 60ms (Views: 57.5ms | ActiveRecord: 2.5ms | Allocations: 40293)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-29 11:43:22 +0300
+Processing by SessionsController#login as */*
+  Parameters: {"email"=>"jamnjeri@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"jamnjeri@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jamnjeri@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `login'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 18]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:11:in `login'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.73ms)
+Completed 200 OK in 266ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 1802)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-03-29 11:44:04 +0300
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"Njeri", "email"=>"jamnjeri@gmail.com", "password"=>"[FILTERED]", "bio"=>"Mfanyikazi mwema mwenye bidii", "user"=>{"username"=>"Njeri", "email"=>"jamnjeri@gmail.com", "bio"=>"Mfanyikazi mwema mwenye bidii"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 6]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 7]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 8]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 9]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 12]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 13]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 14]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 15]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 16]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 17]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 18]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (42.85ms)
+Completed 200 OK in 46ms (Views: 43.1ms | ActiveRecord: 2.3ms | Allocations: 23433)
+
+
+Started GET "/users/" for 127.0.0.1 at 2023-03-29 11:44:26 +0300
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"Njeri", "email"=>"jamnjeri@gmail.com", "password"=>"[FILTERED]", "bio"=>"Mfanyikazi mwema mwenye bidii", "user"=>{"username"=>"Njeri", "email"=>"jamnjeri@gmail.com", "bio"=>"Mfanyikazi mwema mwenye bidii"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 6]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 7]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 8]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 9]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 10]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 11]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 12]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 13]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 14]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 15]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 16]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 17]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 18]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (43.12ms)
+Completed 200 OK in 46ms (Views: 43.3ms | ActiveRecord: 2.1ms | Allocations: 23433)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 15:04:00 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"shadiiiii", "email"=>"shadrackmungai10@gmail.com", "password"=>"[FILTERED]", "bio"=>"junior dev", "user"=>{"username"=>"shadiiiii", "email"=>"shadrackmungai10@gmail.com", "bio"=>"junior dev"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fcf201a1a48>, params: {"username"=>"shadiiiii", "email"=>"shadrackmungai10@gmail.com", "password"=>"[FILTERED]", "bio"=>"junior dev", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"shadiiiii", "email"=>"shadrackmungai10@gmail.com", "bio"=>"junior dev"}} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "shadiiiii"], ["email", "shadrackmungai10@gmail.com"], ["password_digest", "[FILTERED]"], ["bio", "junior dev"], ["created_at", "2023-03-29 12:04:00.766457"], ["updated_at", "2023-03-29 12:04:00.766457"]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering welcome_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered welcome_mailer/welcome_email.html.erb within layouts/mailer (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.4ms | Allocations: 83)
+WelcomeMailer#welcome_email: processed outbound mail in 2.5ms
+Delivered mail 64242930bf798_4f082c10-268@shadi-hp.mail (5114.3ms)
+Date: Wed, 29 Mar 2023 15:04:00 +0300
+From: from@example.com
+To: shadrackmungai10@gmail.com
+Message-ID: <64242930bf798_4f082c10-268@shadi-hp.mail>
+Subject: Welcome to Dev-Space!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome to Dev-Space</h1>
+<p>Ready to be a developer?</p>
+  </body>
+</html>
+
+[active_model_serializers]   [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 19]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:24:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (26.06ms)
+Completed 201 Created in 5401ms (Views: 29.7ms | ActiveRecord: 9.1ms | Allocations: 18001)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 15:22:09 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Ryan", "email"=>"langatryan@gmail.com", "password"=>"[FILTERED]", "bio"=>"junior dev", "user"=>{"username"=>"Ryan", "email"=>"langatryan@gmail.com", "bio"=>"junior dev"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fcf240678b8>, params: {"username"=>"Ryan", "email"=>"langatryan@gmail.com", "password"=>"[FILTERED]", "bio"=>"junior dev", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"Ryan", "email"=>"langatryan@gmail.com", "bio"=>"junior dev"}} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "Ryan"], ["email", "langatryan@gmail.com"], ["password_digest", "[FILTERED]"], ["bio", "junior dev"], ["created_at", "2023-03-29 12:22:09.490704"], ["updated_at", "2023-03-29 12:22:09.490704"]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering welcome_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered welcome_mailer/welcome_email.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.3ms | Allocations: 82)
+WelcomeMailer#welcome_email: processed outbound mail in 2.8ms
+Delivered mail 64242d717c96f_4f082bc0-1e5@shadi-hp.mail (5201.0ms)
+Date: Wed, 29 Mar 2023 15:22:09 +0300
+From: from@example.com
+To: langatryan@gmail.com
+Message-ID: <64242d717c96f_4f082bc0-1e5@shadi-hp.mail>
+Subject: Welcome to Dev-Space!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome to Dev-Space</h1>
+<p>Ready to be a developer?</p>
+  </body>
+</html>
+
+[active_model_serializers]   [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 20]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:24:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (18.64ms)
+Completed 201 Created in 5485ms (Views: 30.6ms | ActiveRecord: 6.9ms | Allocations: 17963)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 15:22:35 +0300
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Ryan", "email"=>"langatryan26@gmail.com", "password"=>"[FILTERED]", "bio"=>"junior dev", "user"=>{"username"=>"Ryan", "email"=>"langatryan26@gmail.com", "bio"=>"junior dev"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fcf2875d358>, params: {"username"=>"Ryan", "email"=>"langatryan26@gmail.com", "password"=>"[FILTERED]", "bio"=>"junior dev", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"Ryan", "email"=>"langatryan26@gmail.com", "bio"=>"junior dev"}} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "Ryan"], ["email", "langatryan26@gmail.com"], ["password_digest", "[FILTERED]"], ["bio", "junior dev"], ["created_at", "2023-03-29 12:22:35.959876"], ["updated_at", "2023-03-29 12:22:35.959876"]]
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering welcome_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered welcome_mailer/welcome_email.html.erb within layouts/mailer (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.3ms | Allocations: 82)
+WelcomeMailer#welcome_email: processed outbound mail in 1.7ms
+Delivered mail 64242d8bedc47_4f082be80d0@shadi-hp.mail (4540.1ms)
+Date: Wed, 29 Mar 2023 15:22:35 +0300
+From: from@example.com
+To: langatryan26@gmail.com
+Message-ID: <64242d8bedc47_4f082be80d0@shadi-hp.mail>
+Subject: Welcome to Dev-Space!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome to Dev-Space</h1>
+<p>Ready to be a developer?</p>
+  </body>
+</html>
+
+[active_model_serializers]   [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 21]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:24:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (5.8ms)
+Completed 201 Created in 4799ms (Views: 7.1ms | ActiveRecord: 8.8ms | Allocations: 6725)
+
+
