@@ -1,15 +1,5 @@
 class UsersController < ApplicationController
 
-    def create
-        user = User.create(user_params)
-        if user.valid?
-            save_user(user.id)
-            render json: user
-        else
-            render json: {message: "Something went wrong during registration",status: :unprocessable_entity, data: user.errors}
-        end
-    end
-
     def index 
         users = User.all
         render json: users, status: :ok
