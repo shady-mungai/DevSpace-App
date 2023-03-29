@@ -5561,3 +5561,7 @@ Processing by ArticlesController#index as */*
 Completed 200 OK in 202ms (Views: 193.9ms | ActiveRecord: 7.4ms | Allocations: 130419)
 
 
+Started OPTIONS "/login" for ::1 at 2023-03-29 22:29:31 +0300
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/login"):
+  
