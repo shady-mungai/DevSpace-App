@@ -1,0 +1,135 @@
+.parent{
+    background: url("./assets/bg9.jpg");
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container1{
+    border-radius: 1rem;
+    border: 1px solid rgb(78, 77, 77);
+    color: #fff;
+    background: url("./assets/bg9.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90%;
+}
+.form2{
+    padding: 1.5rem 3rem;  
+    border-radius: 1rem;
+    border: 1px solid rgb(78, 77, 77);
+    color: #fff;
+    height: 100%;
+    
+    /* backdrop-filter: blur(3px); */
+}
+.emailInput{
+    border: 1px solid #fff;
+    height: 3rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+.emailInput input{
+    height: 2rem;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    width: 17rem;
+    background-color: transparent;
+    font-size: 1.2rem;
+    color: #fff;
+}
+.username{
+    border: 1px solid #fff;
+    height: 3rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+.username input{
+    height: 2rem;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    width: 20rem;
+    background-color: transparent;
+    font-size: 1.2rem;
+    color: #fff;
+}
+.passwordInput{
+    border: 1px solid #fff;
+    height: 3rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+.passwordInput input{
+    height: 2rem;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    width: 17rem;
+    background-color: transparent;
+    font-size: 1.2rem;
+    color: #fff;
+}
+.confirmInput{
+    border: 1px solid #fff;
+    height: 3rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+.confirmInput input{
+    height: 2rem;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    width: 17rem;
+    background-color: transparent;
+    font-size: 1.2rem;
+    color: #fff;
+}
+.signbtn input{
+    background-color: #5137ee;
+    height: 3rem;
+    width: 20rem;
+    border-radius: 2rem;
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+}
+.alreadyRegistered{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   
+}
+.alreadyRegistered a{
+    text-decoration: none;
+    font-size: 1.3rem ;
+    color: lime;
+    margin-top: 1rem;
+}
+.alreadyRegistered p{
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
