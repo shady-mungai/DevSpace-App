@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
     # sign up to the application by creating your data to our db
 
-    def create 
+    def signup 
         user = User.create!(prod_params)
         if user
             WelcomeMailer.welcome_email(user).deliver_now
