@@ -3,9 +3,10 @@ class UsersController < ApplicationController
     def create
         user = User.create(user_params)
         if user.valid?
-            render json: user, status: :created 
+            save_user(user.email)
+            render json: {message: "Registration was successful",status: :created}
         else
-            render json: {error: "try again"}
+            render json: {message: "Something went wrong during registration",status: :unprocessable_entity, data: user.errors}
         end
     end
 

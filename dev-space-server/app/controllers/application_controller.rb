@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::API
-    # protect_from_forgery with: :null_session
     include ActionController::Cookies
+
+    def save_user(email)
+        session[:email] = email
+    end
 end
