@@ -66,3 +66,9 @@ To run the server, type:
 ```bash
 npm start
 ```
+
+This will run the front-end program that shall open in a web browser.
+- For the server side open a new terminal and write:
+```bash
+bundle install
+```
