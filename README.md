@@ -49,3 +49,8 @@ LiveServer Extension
 ```bash
 ThunderClient Extension
 ```
+
+4. Open the folder in `VS Code` using the command 
+```bash
+code .
+```
