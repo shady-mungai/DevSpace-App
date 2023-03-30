@@ -11649,3 +11649,540 @@ Processing by ArticlesController#update as */*
 Completed 422 Unprocessable Entity in 11ms (Views: 7.5ms | ActiveRecord: 0.9ms | Allocations: 3507)
 
 
+Started DELETE "/articles/4" for ::1 at 2023-03-30 12:55:16 +0300
+Processing by ArticlesController#destroy as */*
+  Parameters: {"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "id"=>"4", "article"=>{"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 4]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Destroy (1.5ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 48]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mArticle Destroy (0.7ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 4.2ms | Allocations: 12275)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/articles_controller.rb:34:in `destroy'
+Started DELETE "/articles/4" for ::1 at 2023-03-30 12:56:41 +0300
+  
+SyntaxError (/home/ryan/Development/code/mode_4/PROJECT/DevSpace-App/dev-space-server/app/models/article.rb:10: syntax error, unexpected ':', expecting `end'
+... has_many :reviews, :dependent: :destroy
+...                              ^
+):
+  
+app/models/article.rb:10: syntax error, unexpected ':', expecting `end'
+app/models/article.rb:10: syntax error, unexpected ':', expecting `end'
+app/models/article.rb:10: syntax error, unexpected ':', expecting `end'
+Started DELETE "/articles/4" for ::1 at 2023-03-30 12:57:30 +0300
+Processing by ArticlesController#destroy as */*
+  Parameters: {"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "id"=>"4", "article"=>{"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 4]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Destroy (0.3ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 48]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mArticle Destroy (0.7ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 3.4ms | Allocations: 12268)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/articles_controller.rb:34:in `destroy'
+Started DELETE "/articles/4" for ::1 at 2023-03-30 12:58:09 +0300
+Processing by ArticlesController#destroy as */*
+  Parameters: {"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "id"=>"4", "article"=>{"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 4]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Destroy (0.3ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 48]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mArticle Destroy (1.2ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.4ms | Allocations: 4268)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/articles_controller.rb:34:in `destroy'
+Started GET "/articles" for ::1 at 2023-03-30 12:59:01 +0300
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 2]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 2]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 3]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 3]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 4]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 4]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 5]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 5]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 6]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 6]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 7]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 7]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 8]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 8]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 9]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 9]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 10]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 10]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 11]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 11]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 12]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 12]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 13]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 13]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 14]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 14]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 15]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 15]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 16]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 16]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 17]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 17]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 18]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 18]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 19]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 19]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 20]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 20]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 21]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 21]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 22]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 22]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 23]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 23]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 24]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 24]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 25]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 25]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 26]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 26]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (546.08ms)
+Completed 200 OK in 573ms (Views: 561.2ms | ActiveRecord: 21.4ms | Allocations: 127769)
+
+
+Started DELETE "/articles/4" for ::1 at 2023-03-30 13:00:06 +0300
+Processing by ArticlesController#destroy as */*
+  Parameters: {"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "id"=>"4", "article"=>{"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 4]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Destroy (0.4ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 48]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mArticle Destroy (0.7ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 4.0ms | Allocations: 12222)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/articles_controller.rb:34:in `destroy'
+Started DELETE "/articles/4" for ::1 at 2023-03-30 13:02:37 +0300
+  
+ArgumentError (The :dependent option must be one of [:destroy, :delete_all, :nullify, :restrict_with_error, :restrict_with_exception, :destroy_async], but is :destroy_all):
+  
+app/models/article.rb:10:in `<class:Article>'
+app/models/article.rb:2:in `<main>'
+Started DELETE "/articles/4" for ::1 at 2023-03-30 13:02:55 +0300
+Processing by ArticlesController#destroy as */*
+  Parameters: {"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "id"=>"4", "article"=>{"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 4]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Destroy (0.3ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 48]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mArticle Destroy (1.0ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 4.6ms | Allocations: 12321)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/articles_controller.rb:34:in `destroy'
+Started GET "/articles/" for ::1 at 2023-03-30 13:04:12 +0300
+Processing by ArticlesController#index as */*
+  Parameters: {"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "article"=>{"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.1ms)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.7ms | Allocations: 3078)
+
+
+Started GET "/articles/2" for ::1 at 2023-03-30 13:04:19 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/articles/2"):
+  
+Started GET "/articles/2" for ::1 at 2023-03-30 13:05:14 +0300
+  
+SyntaxError (/home/ryan/Development/code/mode_4/PROJECT/DevSpace-App/dev-space-server/config/routes.rb:4: syntax error, unexpected local variable or method, expecting `end'
+ get '/article/:id' to: 'users/index'
+                    ^~
+):
+  
+config/routes.rb:4: syntax error, unexpected local variable or method, expecting `end'
+config/routes.rb:4: syntax error, unexpected local variable or method, expecting `end'
+config/routes.rb:4: syntax error, unexpected local variable or method, expecting `end'
+Started GET "/articles/2" for ::1 at 2023-03-30 13:05:46 +0300
+  
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  
+config/routes.rb:4:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/articles/2" for ::1 at 2023-03-30 13:05:58 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/articles/2"):
+  
+Started GET "/articles/" for ::1 at 2023-03-30 13:06:03 +0300
+Processing by ArticlesController#index as */*
+  Parameters: {"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "article"=>{"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.06ms)
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.7ms | Allocations: 2953)
+
+
+Started GET "/articles/2" for ::1 at 2023-03-30 13:06:06 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/articles/2"):
+  
+Started GET "/articles/2" for ::1 at 2023-03-30 13:06:21 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/articles/2"):
+  
+Started GET "/articles/2" for ::1 at 2023-03-30 13:06:43 +0300
+  
+ActionController::RoutingError (uninitialized constant ArticleController
+Did you mean?  ArticlesController):
+  
+Started GET "/articles/2" for ::1 at 2023-03-30 13:07:04 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/articles/2"):
+  
+Started GET "/articles/2" for ::1 at 2023-03-30 13:07:58 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/articles/2"):
+  
+Started DELETE "/articles/2" for ::1 at 2023-03-30 13:08:02 +0300
+Processing by ArticlesController#destroy as */*
+  Parameters: {"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "id"=>"2", "article"=>{"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 2]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Destroy (0.4ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Destroy (0.2ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Destroy (0.2ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 41]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mArticle Destroy (0.9ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 4.5ms | Allocations: 13750)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/articles_controller.rb:34:in `destroy'
+Started DELETE "/articles/2" for ::1 at 2023-03-30 13:11:34 +0300
+Processing by ArticlesController#destroy as */*
+  Parameters: {"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "id"=>"2", "article"=>{"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 2]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Destroy (0.2ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Destroy (0.2ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Destroy (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 41]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mArticle Destroy (0.6ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 4.3ms | Allocations: 13748)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started DELETE "/articles/2" for ::1 at 2023-03-30 13:13:33 +0300
+Processing by ArticlesController#destroy as */*
+  Parameters: {"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "id"=>"2", "article"=>{"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 2]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Destroy (0.2ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Destroy (0.3ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Destroy (0.2ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 41]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mArticle Destroy (0.7ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 4.0ms | Allocations: 13749)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/articles_controller.rb:34:in `destroy'
+Started DELETE "/articles/2" for ::1 at 2023-03-30 13:16:51 +0300
+Processing by ArticlesController#destroy as */*
+  Parameters: {"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "id"=>"2", "article"=>{"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 2]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Destroy (0.7ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Destroy (0.3ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Destroy (0.3ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 41]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mArticle Destroy (0.9ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 5.0ms | Allocations: 13748)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/articles_controller.rb:34:in `destroy'
+Started DELETE "/articles/2" for ::1 at 2023-03-30 13:21:15 +0300
+Processing by ArticlesController#destroy as */*
+  Parameters: {"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "id"=>"2", "article"=>{"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 2]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Destroy (0.2ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Destroy (0.2ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Destroy (0.9ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 41]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mArticle Destroy (0.9ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 4.6ms | Allocations: 13769)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/articles_controller.rb:34:in `destroy'
+Started DELETE "/articles/2" for ::1 at 2023-03-30 13:22:37 +0300
+Processing by ArticlesController#destroy as */*
+  Parameters: {"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "id"=>"2", "article"=>{"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `destroy'
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 2]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Destroy (0.5ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Destroy (0.2ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mReview Destroy (0.2ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 41]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (13.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:35:in `destroy'
+  [1m[36mArticle Destroy (1.4ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/articles_controller.rb:35:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/articles_controller.rb:35:in `destroy'
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 18.9ms | Allocations: 13691)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/articles_controller.rb:35:in `destroy'
+Started DELETE "/articles/2" for ::1 at 2023-03-30 13:24:06 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#destroy as */*
+  Parameters: {"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "id"=>"2", "article"=>{"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `destroy'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 2]]
+  ↳ app/controllers/articles_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:35:in `destroy'
+  [1m[36mArticle Destroy (1.0ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/articles_controller.rb:35:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/articles_controller.rb:35:in `destroy'
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 3.3ms | Allocations: 27759)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/articles_controller.rb:35:in `destroy'

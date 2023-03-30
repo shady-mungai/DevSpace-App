@@ -7,5 +7,5 @@ class Article < ApplicationRecord
   has_many :tags, through: :article_tags
   
   #has many reviews
-  has_many :reviews, :dependent => :destroy
+  has_many :reviews, dependent: :destroy
 end

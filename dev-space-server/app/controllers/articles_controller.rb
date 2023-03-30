@@ -23,7 +23,19 @@ class ArticlesController < ApplicationController
         article.update(article_params)
         render json: article,status: :accepted
       else
-        render json: {error: "Article not found"}, status: :unprocessable_entity
+        render json: {error: "Article not found"}, status: :not_found
+      end
+    end
+
+    #destroy
+    def destroy
+      article = Article.find_by(id:params[:id])
+      if article
+        article.reviews.destroy_all # delete all associated reviews
+        article.destroy
+        render json: []
+      else
+        render json: {error: "Article not found"}, status: :not_found
       end
     end
   
