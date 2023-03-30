@@ -38,3 +38,4 @@ To get the code..
 ```bash
 https://github.com/shady-mungai/DevSpace-App
 
+2. Fork and Clone the repository above to your local computer.
