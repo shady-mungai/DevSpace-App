@@ -9,8 +9,6 @@ class ArticlesController < ApplicationController
         render json: articles
     end
 
-    def create 
-
 
 end
 =======
