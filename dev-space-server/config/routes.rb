@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#login"
   # resources :tags
   # resources :reviews
-   resources :articles, only:[:index, :create]
+   resources :articles, only:[:index, :create,:update]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

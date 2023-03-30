@@ -11008,3 +11008,644 @@ Content-Transfer-Encoding: 7bit
 Completed 201 Created in 4799ms (Views: 7.1ms | ActiveRecord: 8.8ms | Allocations: 6725)
 
 
+Started GET "/" for ::1 at 2023-03-30 12:42:05 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-2.7.4/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-2.7.4/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.3ms | Allocations: 660)
+Completed 200 OK in 24ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 5380)
+
+
+Started GET "/articles" for ::1 at 2023-03-30 12:42:15 +0300
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (2.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (1.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 2]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 2]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 3]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 3]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 4]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 4]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 5]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 5]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 6]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 6]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 7]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 7]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 8]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 8]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 9]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 9]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 10]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 10]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 11]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (3.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 11]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 12]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 12]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 13]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 13]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 14]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 14]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (2.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 15]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 15]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 16]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 16]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 17]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 17]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 18]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 18]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 19]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 19]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 20]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 20]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 21]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 21]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 22]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 22]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 23]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 23]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 24]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 24]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 25]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 25]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 26]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 26]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (618.44ms)
+Completed 200 OK in 709ms (Views: 660.9ms | ActiveRecord: 26.7ms | Allocations: 192124)
+
+
+Started GET "/articles" for ::1 at 2023-03-30 12:42:37 +0300
+Processing by ArticlesController#index as */*
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 2]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 2]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 3]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 3]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 4]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 4]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 5]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 5]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 6]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 6]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 7]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 7]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 8]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 8]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 9]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 9]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 10]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 10]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 11]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 11]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 12]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 12]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 13]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 13]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 14]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 14]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 15]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 15]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 16]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 16]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 17]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 17]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 18]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 18]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 19]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 19]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 20]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 20]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 21]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 21]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 22]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 22]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 23]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 23]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 24]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 24]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 25]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 25]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 26]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 26]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (377.47ms)
+Completed 200 OK in 381ms (Views: 367.3ms | ActiveRecord: 13.3ms | Allocations: 96790)
+
+
+Started PUT "/articles" for ::1 at 2023-03-30 12:43:10 +0300
+  
+ActionController::RoutingError (No route matches [PUT] "/articles"):
+  
+Started PUT "/articles/1" for ::1 at 2023-03-30 12:44:00 +0300
+Processing by ArticlesController#update as */*
+  Parameters: {"title"=>"Odio magi sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "id"=>"1", "article"=>{"title"=>"Odio magi sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `user'
+[31mUnpermitted parameters: :id, :article. Context: { controller: ArticlesController, action: update, request: #<ActionDispatch::Request:0x00007f32d80229e0>, params: {"title"=>"Odio magi sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "controller"=>"articles", "action"=>"update", "id"=>"1", "article"=>{"title"=>"Odio magi sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}} }[0m
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 23]]
+  ↳ app/controllers/articles_controller.rb:21:in `update'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.8ms | Allocations: 3046)
+
+
+  
+ArgumentError (Unrecognized status code :updated):
+  
+app/controllers/articles_controller.rb:23:in `update'
+Started PUT "/articles/1" for ::1 at 2023-03-30 12:44:16 +0300
+Processing by ArticlesController#update as */*
+  Parameters: {"title"=>"Odio magi sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "id"=>"1", "article"=>{"title"=>"Odio magi sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `user'
+[31mUnpermitted parameters: :id, :article. Context: { controller: ArticlesController, action: update, request: #<ActionDispatch::Request:0x00007f32e8f3bb38>, params: {"title"=>"Odio magi sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "controller"=>"articles", "action"=>"update", "id"=>"1", "article"=>{"title"=>"Odio magi sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}} }[0m
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 23]]
+  ↳ app/controllers/articles_controller.rb:21:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 201 Created in 28ms (Views: 1.6ms | ActiveRecord: 3.2ms | Allocations: 7119)
+
+
+Started PUT "/articles/1" for ::1 at 2023-03-30 12:44:42 +0300
+Processing by ArticlesController#update as */*
+  Parameters: {"title"=>"Odio magi sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "id"=>"1", "article"=>{"title"=>"Odio magi sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `user'
+[31mUnpermitted parameters: :id, :article. Context: { controller: ArticlesController, action: update, request: #<ActionDispatch::Request:0x00007f32e00d2518>, params: {"title"=>"Odio magi sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "controller"=>"articles", "action"=>"update", "id"=>"1", "article"=>{"title"=>"Odio magi sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}} }[0m
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 23]]
+  ↳ app/controllers/articles_controller.rb:21:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 201 Created in 5ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 1297)
+
+
+Started PUT "/articles/" for ::1 at 2023-03-30 12:44:48 +0300
+  
+ActionController::RoutingError (No route matches [PUT] "/articles"):
+  
+Started GET "/articles/2" for ::1 at 2023-03-30 12:44:58 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/articles/2"):
+  
+Started GET "/articles/" for ::1 at 2023-03-30 12:45:02 +0300
+Processing by ArticlesController#index as */*
+  Parameters: {"title"=>"Odio magi sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "article"=>{"title"=>"Odio magi sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}}
+  [1m[36mArticle Load (1.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (1.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 2]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 2]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 3]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 3]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 4]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 4]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 5]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 5]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 6]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 6]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 7]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 7]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 8]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 8]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 9]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 9]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 10]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 10]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 11]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 11]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 12]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 12]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 13]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 13]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 14]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 14]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 15]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 15]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 16]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 16]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 17]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 17]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 18]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 18]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 19]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 19]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 20]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 20]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 21]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 21]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 22]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 22]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 23]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 23]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 24]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 24]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 25]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 25]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 26]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 26]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (342.71ms)
+Completed 200 OK in 357ms (Views: 340.5ms | ActiveRecord: 16.5ms | Allocations: 119913)
+
+
+Started PATCH "/articles/2" for ::1 at 2023-03-30 12:46:06 +0300
+Processing by ArticlesController#update as */*
+  Parameters: {"title"=>"Odio magi sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "id"=>"2", "article"=>{"title"=>"Odio magi sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `user'
+[31mUnpermitted parameters: :id, :article. Context: { controller: ArticlesController, action: update, request: #<ActionDispatch::Request:0x00007f32d884ca08>, params: {"title"=>"Odio magi sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "controller"=>"articles", "action"=>"update", "id"=>"2", "article"=>{"title"=>"Odio magi sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}} }[0m
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 23]]
+  ↳ app/controllers/articles_controller.rb:21:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.09ms)
+Completed 201 Created in 7ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 1297)
+
+
+Started PUT "/articles/2" for ::1 at 2023-03-30 12:46:39 +0300
+Processing by ArticlesController#update as */*
+  Parameters: {"title"=>"Odio magi sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "id"=>"2", "article"=>{"title"=>"Odio magi sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `user'
+[31mUnpermitted parameters: :id, :article. Context: { controller: ArticlesController, action: update, request: #<ActionDispatch::Request:0x00007f32d87bcde0>, params: {"title"=>"Odio magi sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "controller"=>"articles", "action"=>"update", "id"=>"2", "article"=>{"title"=>"Odio magi sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}} }[0m
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 23]]
+  ↳ app/controllers/articles_controller.rb:21:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.16ms)
+Completed 201 Created in 9ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 1297)
+
+
+Started PUT "/articles/2" for ::1 at 2023-03-30 12:50:14 +0300
+Processing by ArticlesController#update as */*
+  Parameters: {"title"=>"Odio magi sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "id"=>"2", "article"=>{"title"=>"Odio magi sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}}
+  [1m[36mArticle Load (1.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:21:in `update'
+[31mUnpermitted parameters: :id, :article. Context: { controller: ArticlesController, action: update, request: #<ActionDispatch::Request:0x00007f32d83d1708>, params: {"title"=>"Odio magi sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "controller"=>"articles", "action"=>"update", "id"=>"2", "article"=>{"title"=>"Odio magi sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:23:in `update'
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:23:in `update'
+  [1m[36mArticle Update (9.2ms)[0m  [1m[33mUPDATE "articles" SET "title" = ?, "topic_language" = ?, "content" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["title", "Odio magi sequi temporibus."], ["topic_language", "MIIS"], ["content", "[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"], ["updated_at", "2023-03-30 09:50:15.457740"], ["id", 2]]
+  ↳ app/controllers/articles_controller.rb:23:in `update'
+  [1m[36mTRANSACTION (9.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:23:in `update'
+[active_model_serializers]   [1m[36mReview Load (1.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 2]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:24:in `update'
+[active_model_serializers]   [1m[36mTag Load (1.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 2]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:24:in `update'
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (66.97ms)
+Completed 200 OK in 141ms (Views: 65.4ms | ActiveRecord: 31.6ms | Allocations: 32884)
+
+
+Started PUT "/articles/2" for ::1 at 2023-03-30 12:50:29 +0300
+Processing by ArticlesController#update as */*
+  Parameters: {"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "id"=>"2", "article"=>{"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:21:in `update'
+[31mUnpermitted parameters: :id, :article. Context: { controller: ArticlesController, action: update, request: #<ActionDispatch::Request:0x00007f32e0135d70>, params: {"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "controller"=>"articles", "action"=>"update", "id"=>"2", "article"=>{"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:23:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:23:in `update'
+  [1m[36mArticle Update (0.2ms)[0m  [1m[33mUPDATE "articles" SET "title" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["title", " sequi temporibus."], ["updated_at", "2023-03-30 09:50:29.063002"], ["id", 2]]
+  ↳ app/controllers/articles_controller.rb:23:in `update'
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:23:in `update'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 2]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:24:in `update'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 2]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:24:in `update'
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (9.01ms)
+Completed 200 OK in 27ms (Views: 9.3ms | ActiveRecord: 7.8ms | Allocations: 6211)
+
+
+Started PUT "/articles/455" for ::1 at 2023-03-30 12:50:51 +0300
+Processing by ArticlesController#update as */*
+  Parameters: {"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "id"=>"455", "article"=>{"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 455], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:21:in `update'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms | Allocations: 1328)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/controllers/articles_controller.rb:26:in `update'
+Started PUT "/articles/455" for ::1 at 2023-03-30 12:52:02 +0300
+Processing by ArticlesController#update as */*
+  Parameters: {"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]", "id"=>"455", "article"=>{"title"=>" sequi temporibus.", "topic_language"=>"MIIS", "content"=>"[\"Alias ea voluptatibus. Libero veritatis aut. Sed dolor tenetur.\", \"Asperiores sit quos. Quia aut inventore. Qui provident maxime.\", \"Ea reprehenderit ratione. Illo laudantium quia. Aut voluptas reiciendis.\"]"}}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 455], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:21:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 422 Unprocessable Entity in 11ms (Views: 7.5ms | ActiveRecord: 0.9ms | Allocations: 3507)
+
+
