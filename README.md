@@ -24,3 +24,9 @@ You can also browse and search for tutorials created by other users by clicking 
 - Json-server packages installed 
 - npm 
 - Browser(Chrome or any other Chromium based Browser)
+
+(b) Server side
+- Visual Studio Code.
+- Thunder Client extension.
+- Json-server packages installed.
+- Gem-server packages installed
