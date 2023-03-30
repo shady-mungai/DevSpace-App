@@ -104,3 +104,7 @@ This project was contributed to by:
 - Steve Mbugua.
 - Simon Muriithi.
 - Ryan Langat.
+For this project's sourcecode is in [Shadrack Mungai github  account.](https://github.com/shady-mungai/)
+
+## License
+The DevSpace-App is licensed under the MIT license.
