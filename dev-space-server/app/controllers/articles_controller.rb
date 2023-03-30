@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 class ArticlesController < ApplicationController 
 
   before_action :authorize
@@ -8,6 +7,16 @@ class ArticlesController < ApplicationController
     def index 
       articles = Article.all
       render json: articles
+    end
+
+    #GET one article
+    def show 
+      article = Article.find(params[:id])
+      if article
+        render json: article, status: :ok
+      else 
+        render json: {error: "Article not found"},status: :not_found
+      end
     end
     
 
@@ -50,4 +59,3 @@ class ArticlesController < ApplicationController
       params.permit(:title,:topic_language,:content)
     end
 end
-=======
