@@ -18,3 +18,9 @@ You can also browse and search for tutorials created by other users by clicking 
 - Ruby (v2.7.4 or later)
 
 ## Development Requirements
+(a) Client side
+- Visual Studio Code.
+- Live server extension.
+- Json-server packages installed 
+- npm 
+- Browser(Chrome or any other Chromium based Browser)
