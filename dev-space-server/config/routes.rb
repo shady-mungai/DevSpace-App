@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#logout"
   post "/login", to: "sessions#login"
   # resources :tags
-   resources :reviews, only: [:create]
+  # resources :reviews
    resources :articles, only:[:index]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

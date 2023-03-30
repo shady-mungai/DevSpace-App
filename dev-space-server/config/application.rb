@@ -10,6 +10,7 @@ module DevSpaceServer
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+<<<<<<< HEAD
 
   config.middleware.insert_before 0, Rack::Cors do
     allow do
@@ -25,5 +26,10 @@ module DevSpaceServer
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+=======
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore
+    config.action_dispatch.cookies_same_site_protection = :strict
+>>>>>>> 62099abee15e1a8a5c1d0afa7d5b10783e9a7fa4
   end
 end
