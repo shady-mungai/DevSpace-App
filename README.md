@@ -72,3 +72,14 @@ This will run the front-end program that shall open in a web browser.
 ```bash
 bundle install
 ```
+
+- This will installs all the gems listed in the Gemfile lock.
+
+- To run the server, type:
+```bash
+rails s
+```
+- In ThunderClient, navigate to:
+```bash
+http://localhost:3000
+```
