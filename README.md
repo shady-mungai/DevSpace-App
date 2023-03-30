@@ -39,3 +39,9 @@ To get the code..
 https://github.com/shady-mungai/DevSpace-App
 
 2. Fork and Clone the repository above to your local computer.
+
+3. Move to the folder where you cloned the files and install the relevant extension. the extension are:
+
+```bash
+LiveServer Extension
+```
