@@ -45,3 +45,7 @@ https://github.com/shady-mungai/DevSpace-App
 ```bash
 LiveServer Extension
 ```
+
+```bash
+ThunderClient Extension
+```
