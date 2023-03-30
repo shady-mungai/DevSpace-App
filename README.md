@@ -56,3 +56,13 @@ code .
 ```
 
 5. Running the application
+
+- For the client side open a new terminal, change the directory to client and write:
+```bash
+npm install
+```
+This will install the relevant dependencies for the json packages.
+To run the server, type:
+```bash
+npm start
+```
