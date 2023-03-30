@@ -30,3 +30,11 @@ You can also browse and search for tutorials created by other users by clicking 
 - Thunder Client extension.
 - Json-server packages installed.
 - Gem-server packages installed
+
+## Development Installation
+To get the code..
+
+1. Got to the following github repository to access the files.
+```bash
+https://github.com/shady-mungai/DevSpace-App
+
