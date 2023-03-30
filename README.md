@@ -96,3 +96,11 @@ POST, GET, PATCH and DELETE
 - [CSS]
 - [React]
 - [Rails]
+
+## Author.
+This project was contributed to by:
+
+- Shadrack Mungai.
+- Steve Mbugua.
+- Simon Muriithi.
+- Ryan Langat.
