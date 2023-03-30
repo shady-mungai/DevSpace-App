@@ -54,3 +54,5 @@ ThunderClient Extension
 ```bash
 code .
 ```
+
+5. Running the application
