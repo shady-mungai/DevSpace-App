@@ -83,3 +83,16 @@ rails s
 ```bash
 http://localhost:3000
 ```
+
+-  You can then perform CRUD (Create, Read, Update, Delete) using:
+```bash
+POST, GET, PATCH and DELETE
+```
+
+## Technology used
+
+- [HTML5](https://www.python.org/)
+- [Javascript](https://heroku.com)
+- [CSS]
+- [React]
+- [Rails]
