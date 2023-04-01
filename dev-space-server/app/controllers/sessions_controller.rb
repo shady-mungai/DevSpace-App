@@ -4,7 +4,6 @@ class SessionsController < ApplicationController
     #authentucating the user's password
     #storing their id via sessions
     def login
-        
         user = User.find_by(email: params[:email])
         if user&.authenticate(params[:password])
             session[:user_id] = user.id
@@ -15,7 +14,7 @@ class SessionsController < ApplicationController
    end
 
    #delete functionality that deletes the user's id from the sessions thus logging out user
-   def logout 
+    def logout 
        session.delete :user_id
        head :no_content
     end
