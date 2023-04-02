@@ -1,11 +1,4 @@
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
-/tmp
-/log
-/db
-=======
->>>>>>> 71439411f8b8125aceaa49d65648e656f7179fc5
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -15,12 +8,8 @@
 /tmp/pids/*
 !/tmp/pids/
 !/tmp/pids/.keep
-<<<<<<< HEAD
 =======
 /tmp
 /log
 /db
 >>>>>>> 4aebf1ff9ca260eb91b261852c41abd7b0f3eba9
-=======
->>>>>>> 62099abee15e1a8a5c1d0afa7d5b10783e9a7fa4
->>>>>>> 71439411f8b8125aceaa49d65648e656f7179fc5
