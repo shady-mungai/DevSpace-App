@@ -1,17 +1,19 @@
 import "./Articles.css";
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import {  Link } from 'react-router-dom';
-import AuthContext from "./AuthContext/AuthContext";
 import Profile from "./Profile";
 
-
+let userId = localStorage.getItem('id')
+let userEmail = localStorage.getItem('email')
+let userName = localStorage.getItem('username')
 const Articles = () => {
 
-  const {currentUser} = useContext(AuthContext)
+  
   const [articles, setArticles] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
+    
     const fetchArticles = async () => {
       const response = await fetch('http://localhost:3300/articles?_embed=tags');
       if (response.ok) {
@@ -32,15 +34,15 @@ const Articles = () => {
   });
 
  useEffect(()=>{
-    console.log(currentUser)
- },[currentUser])
+    console.log(userId)
+ },[])
 
   return (
     <div className="Homepage">
       <header>
         <div className="navbar">
           <div className="left">
-            <h1>DevSpace {currentUser && currentUser.id}</h1>
+            <h1>DevSpace</h1>
             <input type="search" placeholder="Search" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
 
           </div>
@@ -75,6 +77,11 @@ const Articles = () => {
                 <p className="content">
                 {article.content && JSON.parse(article.content)}
                   </p>
+
+              <p>
+                {article.id === userId ? 'Mine' : ''}
+              </p>
+
               </div>
               <footer>
                 <div className="tags-container">

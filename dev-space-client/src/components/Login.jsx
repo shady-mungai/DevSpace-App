@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import './Login.css';
 
@@ -8,8 +8,25 @@ const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   
+  useEffect(()=>{
+    fetch('http://localhost:3300/users')
+    .then((res)=>res.json())
+    .then((data)=>{
+      setUsers(data)
+      console.log(data)
+    })
+  },[])
 
   const userLogin = async () => {
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value
+    const user =  users.filter((user)=> user.email === email )
+    const userObject = Object.assign({},user)
+    console.log('user::::::::' +  user[0].id )
+    if(user.length) {
+    localStorage.setItem('email',user[0].email)
+    localStorage.setItem('id', user[0].id)
+    localStorage.setItem('username', user[0].username)
     const response = await fetch('http://localhost:3300/login', {
       method: 'POST',
       headers: {
@@ -38,7 +55,6 @@ const Login = () => {
           });
 
 
-    // filer 
 
 
        navigate('/Articles');
@@ -46,6 +62,9 @@ const Login = () => {
       // Login failed, display error message
       const error = await response.json();
       alert(error.message);
+    }
+    }else{
+      alert("invalid email or password")
     }
   };
 
@@ -67,9 +86,6 @@ const Login = () => {
               <div className="div"><p>Email*</p></div>
               <div className="emailplace"><input ref={emailRef} type="email" placeholder="johndoe@gmail.com" required /></div>
               <div className="div"><p>Password*</p></div>
-              {users.map((user)=>(
-                <div className="div"><p>{user.email}</p></div>
-              ))}
               <div className="passplace"><input ref={passwordRef} type="password" placeholder="Input password" required /></div>
               <div className="forgot">
                 <p>Forgot password?</p>

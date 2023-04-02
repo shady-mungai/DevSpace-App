@@ -1,20 +1,24 @@
-import React, { useState, useEffect } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import './Library.css'
+import React, { useState, useEffect } from "react";
 
 const Library = () => {
-  const [editorValue, setEditorValue] = useState({title: '', topicLanguage: '', content: ''});
   const [articles, setArticles] = useState([]);
+  const [editorValue, setEditorValue] = useState('');
 
-  // useEffect(() => {
-  //   const fetchArticles = async () => {
-  //     const response = await fetch('http://localhost:3300/articles');
-  //     const data = await response.json();
-  //     setArticles(data);
-  //   };
-
-  //   fetchArticles();
-  // }, []);
+  useEffect(() => {
+    const fetchArticles = async () => {
+      const response = await fetch('http://localhost:3300/articles');
+      if (response.ok) {
+        const data = await response.json();
+        setArticles(data);
+      } else {
+        console.log('Error fetching articles');
+      }
+    }
+    fetchArticles();
+  }, []);
 
   const handleNewArticle = async () => {
     const response = await fetch('http://localhost:3300/articles', {
@@ -23,95 +27,95 @@ const Library = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        title: editorValue.title,
-        topicLanguage: editorValue.topicLanguage,
-        content: editorValue.content
+        title: 'New Article',
+        content: editorValue
       })
     });
-
     if (response.ok) {
       const data = await response.json();
       setArticles([...articles, data]);
-      console.log(data)
-      setEditorValue({title: '', topicLanguage: '', content: ''});
+      setEditorValue('');
     } else {
       console.log('Error creating article');
     }
-  };
+  }
 
-  const handleDeleteArticle = async (id) => {
-    const response = await fetch(`http://localhost:3300/articles/${id}`, {
+  const handleUpdateArticle = async (articleId) => {
+    const response = await fetch(`http://localhost:3300/articles/${articleId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        content: editorValue
+      })
+    });
+    if (response.ok) {
+      const data = await response.json();
+      const updatedArticles = articles.map((article) => {
+        if (article.id === data.id) {
+          return data;
+        } else {
+          return article;
+        }
+      });
+      setArticles(updatedArticles);
+      setEditorValue('');
+    } else {
+      console.log('Error updating article');
+    }
+  }
+
+  const handleDeleteArticle = async (articleId) => {
+    const response = await fetch(`http://localhost:3300/articles/${articleId}`, {
       method: 'DELETE'
     });
-
     if (response.ok) {
-      const newArticles = articles.filter((article) => article.id !== id);
-      setArticles(newArticles);
+      const updatedArticles = articles.filter((article) => article.id !== articleId);
+      setArticles(updatedArticles);
+      setEditorValue('');
     } else {
       console.log('Error deleting article');
     }
-  };
-
-  const handleEditArticle = async (id) => {
-    const articleToEdit = articles.find((article) => article.id === id);
-    const newContent = prompt('Enter new content:', articleToEdit.content);
-
-    if (newContent) {
-      const response = await fetch(`http://localhost:3300/articles/${id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          content: newContent
-        })
-      });
-
-      if (response.ok) {
-        const newArticles = articles.map((article) => {
-          if (article.id === id) {
-            return {
-              ...article,
-              content: newContent
-            };
-          } else {
-            return article;
-          }
-        });
-
-        setArticles(newArticles);
-      } else {
-        console.log('Error editing article');
-      }
-    }
-  };
+  }
 
   return (
-    <div>
-      <h1>Library</h1>
-      <div>
-        <input type="text" placeholder="Title" value={editorValue.title} onChange={(e) => setEditorValue({...editorValue, title: e.target.value})} />
-        <input type="text" placeholder="Topic/Language" value={editorValue.topicLanguage} onChange={(e) => setEditorValue({...editorValue, topicLanguage: e.target.value})} />
-        <ReactQuill value={editorValue.content} onChange={(value) => setEditorValue({...editorValue, content: value})} />
-        <button onClick={handleNewArticle}>Create Article</button>
+    <div className="publish-article">
+      <div className="write-article">
+      <div className="card-header">
+        <h3>Your Articles</h3>
+        <button className="new-art-btn" onClick={handleNewArticle}>Add Article</button>
       </div>
-      {articles.length > 0 ? (
-        <div>
-          {articles.map((article) => (
-            <div key={article.id}>
-              <h2>{article.title}</h2>
-              <p>{article.topicLanguage}</p>
-              <div>{article.content && JSON.parse(article.content)}</div>
-              <button onClick={() => handleEditArticle(article.id)}>Edit</button>
-              <button onClick={() => handleDeleteArticle(article.id)}>Delete</button>
+      <div className="card-body">
+        <ReactQuill className="quill" value={editorValue} onChange={setEditorValue} />
+        {articles.length > 0 ? (
+          <ul>
+            {articles.map((article) => (
+              <li key={article.id}>
+                <div className="card">
+                  <div className="card-header">
+                    <h4>{article.title}</h4>
+                  </div>
+                  <div className="card-body">
+                    <div ><p>{article.content && article.content}</p></div>
+                    <button className="update-btn" onClick={() => handleUpdateArticle(article.id)}>Update</button>
+                    <button className="delete-btn" onClick={() => handleDeleteArticle(article.id)}>Delete</button>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div className="nb">
+            <div className="footer-body">
+              <p>Create an article to easily organize and share stories.</p>
             </div>
-          ))}
-        </div>
-      ) : (
-        <p>No articles yet. Create one!</p>
-      )}
+          </div>
+        )}
+      </div>
+    </div>
     </div>
   );
-};
+}
 
 export default Library;

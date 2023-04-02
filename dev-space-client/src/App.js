@@ -10,6 +10,7 @@ import Profile from "./components/Profile";
 import Library from "./components/Library";
 import ProfileOwner from "./components/ProfileOwner";
 import SignOut from "./components/SignOut";
+import PrivateRoutes from "./components/PrivateRoutes";
 
 function App() {
   return (
@@ -18,12 +19,14 @@ function App() {
         <Route exact path="/" element={<HomePage />}/> 
         <Route path="/Login" element={<Login />}/>
         <Route path="/SignUp" element={<SignUp />}/>
-        <Route path="/Articles" element={<Articles />} /> 
-        <Route path="/articles/:id" element={<ArticlesId />} />
-        <Route path="/Profile" element={<Profile />} />
-        <Route path="/Library" element={<Library />} />
-        <Route path="/ProfileOwner" element={<ProfileOwner />} />
-        <Route path="/SignOut" element={<SignOut />} />
+        <Route element={<PrivateRoutes />}>
+          <Route path="/Articles" element={<Articles />} /> 
+          <Route path="/articles/:id" element={<ArticlesId />} />
+          <Route path="/Profile" element={<Profile />} />
+          <Route path="/Library" element={<Library />} />
+          <Route path="/ProfileOwner" element={<ProfileOwner />} />
+          <Route path="/SignOut" element={<SignOut />} />
+        </Route>
       </Routes>
     </div>
   );

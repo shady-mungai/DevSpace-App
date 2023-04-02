@@ -52,7 +52,7 @@ const HomePage = () => {
             </div>
             <div className="about-text">
                 <h1>About Us</h1>
-                <p>
+                 <p>
                 Devspace is an application that provides a platform for developers to share and discover technical articles, tutorials, and code snippets. With Devspace, developers can create their own profiles, publish articles, and engage with a community of like-minded developers.
                 </p>
 
