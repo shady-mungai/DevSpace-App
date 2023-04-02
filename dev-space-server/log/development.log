@@ -12622,3 +12622,123 @@ ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY const
   
 app/controllers/articles_controller.rb:19:in `destroy'
 >>>>>>> 4aebf1ff9ca260eb91b261852c41abd7b0f3eba9
+Started GET "/articles/1" for 127.0.0.1 at 2023-04-01 11:41:32 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#show as */*
+  Parameters: {"username"=>"Ryan", "email"=>"langatryan26@gmail.com", "password"=>"[FILTERED]", "bio"=>"junior dev", "id"=>"1", "article"=>{}}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:14:in `show'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:16:in `show'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:16:in `show'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:16:in `show'
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (81.75ms)
+Completed 200 OK in 118ms (Views: 93.5ms | ActiveRecord: 3.9ms | Allocations: 77456)
+
+
+Started GET "/articles/2" for 127.0.0.1 at 2023-04-01 11:41:42 +0300
+Processing by ArticlesController#show as */*
+  Parameters: {"username"=>"Ryan", "email"=>"langatryan26@gmail.com", "password"=>"[FILTERED]", "bio"=>"junior dev", "id"=>"2", "article"=>{}}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:14:in `show'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:16:in `show'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 2]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:16:in `show'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 2]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:16:in `show'
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (10.13ms)
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.9ms | Allocations: 4174)
+
+
+Started GET "/articles/3" for 127.0.0.1 at 2023-04-01 11:41:44 +0300
+Processing by ArticlesController#show as */*
+  Parameters: {"username"=>"Ryan", "email"=>"langatryan26@gmail.com", "password"=>"[FILTERED]", "bio"=>"junior dev", "id"=>"3", "article"=>{}}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:14:in `show'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:16:in `show'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 3]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:16:in `show'
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "article_tags" ON "tags"."id" = "article_tags"."tag_id" WHERE "article_tags"."article_id" = ?[0m  [["article_id", 3]]
+[active_model_serializers]   ↳ app/controllers/articles_controller.rb:16:in `show'
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (31.79ms)
+Completed 200 OK in 34ms (Views: 31.4ms | ActiveRecord: 1.0ms | Allocations: 20010)
+
+
+Started DELETE "/articles/3" for 127.0.0.1 at 2023-04-01 11:41:57 +0300
+Processing by ArticlesController#destroy as */*
+  Parameters: {"username"=>"Ryan", "email"=>"langatryan26@gmail.com", "password"=>"[FILTERED]", "bio"=>"junior dev", "id"=>"3", "article"=>{}}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:47:in `destroy'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 3]]
+  ↳ app/controllers/articles_controller.rb:49:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:49:in `destroy'
+  [1m[36mReview Destroy (7.8ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 16]]
+  ↳ app/controllers/articles_controller.rb:49:in `destroy'
+  [1m[36mReview Destroy (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 17]]
+  ↳ app/controllers/articles_controller.rb:49:in `destroy'
+  [1m[36mReview Destroy (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 19]]
+  ↳ app/controllers/articles_controller.rb:49:in `destroy'
+  [1m[36mReview Destroy (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 23]]
+  ↳ app/controllers/articles_controller.rb:49:in `destroy'
+  [1m[36mReview Destroy (0.2ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 37]]
+  ↳ app/controllers/articles_controller.rb:49:in `destroy'
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:49:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:50:in `destroy'
+  [1m[36mArticle Destroy (1.0ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/articles_controller.rb:50:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/articles_controller.rb:50:in `destroy'
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 15.9ms | Allocations: 7848)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/articles_controller.rb:50:in `destroy'
+Started DELETE "/articles/3" for 127.0.0.1 at 2023-04-01 11:44:35 +0300
+Processing by ArticlesController#destroy as */*
+  Parameters: {"username"=>"Ryan", "email"=>"langatryan26@gmail.com", "password"=>"[FILTERED]", "bio"=>"junior dev", "id"=>"3", "article"=>{}}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:47:in `destroy'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 3]]
+  ↳ app/controllers/articles_controller.rb:49:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:50:in `destroy'
+  [1m[36mArticle Destroy (0.9ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/articles_controller.rb:50:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/articles_controller.rb:50:in `destroy'
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 2.9ms | Allocations: 9311)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/articles_controller.rb:50:in `destroy'
+Started DELETE "/articles/3" for 127.0.0.1 at 2023-04-01 11:55:34 +0300
+Processing by ArticlesController#destroy as */*
+  Parameters: {"username"=>"Ryan", "email"=>"langatryan26@gmail.com", "password"=>"[FILTERED]", "bio"=>"junior dev", "id"=>"3", "article"=>{}}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:47:in `destroy'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."article_id" = ?[0m  [["article_id", 3]]
+  ↳ app/controllers/articles_controller.rb:49:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:50:in `destroy'
+  [1m[36mArticle Destroy (0.8ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/articles_controller.rb:50:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/articles_controller.rb:50:in `destroy'
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.6ms | Allocations: 8908)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/articles_controller.rb:50:in `destroy'
