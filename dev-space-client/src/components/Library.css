@@ -56,6 +56,47 @@
     transition: .5s;
 
 }
+.delete-btn
+{
+    color: #fff;
+    font-size: 1rem;
+    padding: .6rem .8rem;
+    border: 2px solid #ffffff;
+    transition: .5s;
+    background: transparent;
+    cursor: pointer;
+    margin-left: .5rem;
+}
+
+.delete-btn:hover
+{
+    color: #000;
+    background: #fff;
+    letter-spacing: .07rem;
+    border-radius: .8rem;
+    transition: .5s;
+
+}
+.update-btn
+{
+    color: #fff;
+    font-size: 1rem;
+    padding: .6rem .8rem;
+    border: 2px solid #ffffff;
+    transition: .5s;
+    background: transparent;
+    cursor: pointer;
+}
+
+.update-btn:hover
+{
+    color: #000;
+    background: #fff;
+    letter-spacing: .07rem;
+    border-radius: .8rem;
+    transition: .5s;
+
+}
 
 .footer-body p
 {
@@ -63,6 +104,8 @@
     text-align: center;
     font-size: 1.18rem;
 }
+
+
 
 
 

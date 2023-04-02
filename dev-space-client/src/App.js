@@ -1,16 +1,14 @@
-import React from "react"
-import { Routes, Route } from "react-router-dom"
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
-import HomePage from "./components/HomePage"
-
-
+import HomePage from "./components/HomePage";
 import './App.css';
 import Articles from "./components/Articles";
 import ArticlesId from "./components/ArticlesId";
 import Profile from "./components/Profile";
 import Library from "./components/Library";
-import ProfileOwner from "./components/ProfileOwner"
+import ProfileOwner from "./components/ProfileOwner";
 import SignOut from "./components/SignOut";
 
 function App() {

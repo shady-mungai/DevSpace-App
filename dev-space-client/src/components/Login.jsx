@@ -1,6 +1,5 @@
-import React, { useRef, useEffect,useState, useContext } from "react";
+import React, { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import AuthContext from "./AuthContext/AuthContext";
 import './Login.css';
 
 const Login = () => {
@@ -8,7 +7,7 @@ const Login = () => {
   const navigate = useNavigate();
   const emailRef = useRef();
   const passwordRef = useRef();
-  const{currentUser,setCurrentUser} = useContext(AuthContext)
+  
 
   const userLogin = async () => {
     const response = await fetch('http://localhost:3300/login', {
@@ -23,21 +22,6 @@ const Login = () => {
     });
 
     if (response.ok) {
-      // User is logged in, navigate to home page
-    //   useEffect(() => {
-    //   const fetchUsers = async () => {
-    //     const response = await fetch('http://localhost:3300/users');
-    //     if (response.ok) {
-    //       const data = await response.json();
-    //       setUsers(data);
-    //       console.log(data)
-    //     } else {
-    //       console.error('Failed to fetch users:', response.status);
-    //     }
-    //   };
-    //   fetchUsers();
-    // }, []);
-    //   }
           fetch('http://localhost:3300/users')
           .then(response => response.json())
           .then(data => {
@@ -45,12 +29,18 @@ const Login = () => {
             let user = data.filter(
               (user)=> user.email=== emailRef.current.value
             )
-            setCurrentUser(user);
+            setUsers(user);
+            console.log(user)
             
           })
           .catch(error => {
             console.error('Error:', error);
           });
+
+
+    // filer 
+
+
        navigate('/Articles');
     } else {
       // Login failed, display error message
@@ -77,15 +67,9 @@ const Login = () => {
               <div className="div"><p>Email*</p></div>
               <div className="emailplace"><input ref={emailRef} type="email" placeholder="johndoe@gmail.com" required /></div>
               <div className="div"><p>Password*</p></div>
-              <div>
-                
-                  <>
-                    <div className="div"><p>{currentUser && currentUser.email}</p></div>
-                  <div className="div"><p>{currentUser && currentUser.id}</p></div>
-                  </>
-                  
-               
-              </div>
+              {users.map((user)=>(
+                <div className="div"><p>{user.email}</p></div>
+              ))}
               <div className="passplace"><input ref={passwordRef} type="password" placeholder="Input password" required /></div>
               <div className="forgot">
                 <p>Forgot password?</p>

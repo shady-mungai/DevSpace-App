@@ -28,7 +28,7 @@ const Articles = () => {
     const titleMatch = article.title.toLowerCase().includes(searchQuery.toLowerCase());
     const tagMatch = article.tags.some((tag) => tag.name.toLowerCase().includes(searchQuery.toLowerCase()));
     const contentMatch = article.content && JSON.parse(article.content).some((content) => content.toLowerCase().includes(searchQuery.toLowerCase()));
-    return titleMatch || tagMatch || contentMatch ;
+    return titleMatch || tagMatch || contentMatch;
   });
 
  useEffect(()=>{
