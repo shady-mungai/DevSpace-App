@@ -8,10 +8,11 @@
 }
 
 
-.App {
+.Homepage {
   overflow-x: hidden;
   background-color: #282c34;
   min-height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -27,7 +28,7 @@ header
 .navbar
 {
     position: relative;
-    top: 0px;
+    top: 0;
     width: 100%;
     display: flex;
     align-items: center;
@@ -35,6 +36,7 @@ header
     padding: .5rem 4rem;
     height: 5rem;
     margin-bottom: 2rem;
+    background-color: #171b22;
 }
 
 .navbar h1
@@ -72,12 +74,14 @@ header
 {
     color: #fff;
     background: #282c34;
-    height: 2.3rem;
+    height: 2.5rem;
     padding: .5rem 1.5rem;
     border-radius: 2rem;
     border: 1.8px solid #999;
     outline: none;
     width: 60vmin;
+    font-size: 1.2rem;
+    margin-top: .9rem;
 
 }
 
@@ -88,16 +92,17 @@ header
     font-size: 1rem;
 }
 
-.body
+.main-body
 {
-  margin-top: 2rem;
+  top: 0;
+  margin-top: 3rem;
   width: 130vmin;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   gap: 1rem;
-  min-height: 75vh;
+  height: 75vh;
   border-radius: .5rem;
 }
 
@@ -112,26 +117,40 @@ header
   height: 3.5rem;
   border-radius: 5rem;
   background: #181b20;
-  padding: 0 .5rem;
+  padding: .5rem .5rem;
 }
-
+.tags-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
 .tags a
 {
-  padding: .4rem 1.2rem;
+  padding: .5rem 1.2rem;
   border-radius: 4rem;
   transition: .5s;
-  color: lightgray;
+  color: rgb(196, 193, 193);
 }
-
+.tags p{
+  cursor: pointer;
+}
 
 .tags a:hover
 {
   color: #fff;
-  background: #282c34;
+  background: #3b414c;
   transition: .5s;
 }
 
-
+.articles
+{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  width: 100%;
+  padding-bottom: 2rem;
+}
 
 .article
 {
@@ -139,8 +158,8 @@ header
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.3rem;
-  padding: 1rem 1rem;
+  gap: 1.6rem;
+  padding: 2rem 1rem;
   background: #23272e;
   color: lightgray;
   transition: .5s;
@@ -150,7 +169,7 @@ header
 
 .article:hover
 {
-  background: #1d2026;
+  background: #171b22;
   transition: .5s;
 }
 
@@ -177,13 +196,18 @@ header
   transition: .4s;
 }
 
-.article-content h1 a
+.title
 {
   color: lightgray;
   transition: .4s;
 }
-
-.article:hover .article-content h1 a 
+.title a{
+  color: white;
+}
+.content{
+  color: lightgray;
+}
+.article:hover .article-content h1 h1 
 {
   color: #fff;
   transition: .4s;
