@@ -1,3 +1,22 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+class ArticlesController < ApplicationController
+    before_action :authorize
+
+    #GET all articles
+
+    def index 
+        articles = Article.all
+        render json: articles
+    end
+
+    def create 
+
+
+end
+=======
+>>>>>>> 71439411f8b8125aceaa49d65648e656f7179fc5
 class ArticlesController < ApplicationController 
 
   before_action :authorize
@@ -59,3 +78,7 @@ class ArticlesController < ApplicationController
       params.permit(:title,:topic_language,:content)
     end
 end
+<<<<<<< HEAD
+=======
+>>>>>>> 62099abee15e1a8a5c1d0afa7d5b10783e9a7fa4
+>>>>>>> 71439411f8b8125aceaa49d65648e656f7179fc5
