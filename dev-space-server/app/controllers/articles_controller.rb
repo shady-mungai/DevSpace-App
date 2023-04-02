@@ -3,6 +3,12 @@ class ArticlesController < ApplicationController
   before_action :authorize
 
   #GET all articles
+  
+    def index 
+      articles = Article.all
+      render json: articles
+    end
+  
 
     def show
       article = Article.find_by(id:params[:id])
@@ -12,11 +18,6 @@ class ArticlesController < ApplicationController
         render json: {error: "article not found"},status: :not_found
     end
 
-    def index 
-      articles = Article.all
-      render json: articles
-    end
-    
 
     # POST create a new article
     def create
@@ -46,13 +47,11 @@ class ArticlesController < ApplicationController
       if article
         article.reviews.destroy_all # delete all associated reviews
         article.destroy
-        render json: []
+        render json: {message:"successfully deleted"}
       else
         render json: {error: "Article not found"}, status: :not_found
       end
     end
-  
-    # private
 
     def article_params
       params.permit(:title,:topic_language,:content)

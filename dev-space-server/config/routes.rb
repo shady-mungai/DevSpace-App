@@ -6,14 +6,12 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#login"
   # resources :tags
   # resources :reviews
-   resources :articles, only:[:index, :create,:update, :destroy]
+   resources :articles, only:[:index,:show, :create, :update, :destroy]
    post '/signup',to: 'users#signup'
    delete "/logout", to: "sessions#logout"
    post "/login", to: "sessions#login"
    resources :tags, only:[:index]
    resources :reviews, only: [:create]
-   resources :articles, only:[:index,:show,:destroy,:create]
-
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

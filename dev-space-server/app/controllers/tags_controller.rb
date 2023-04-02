@@ -3,4 +3,5 @@ class TagsController < ApplicationController
         tags = Tag.all
         render json: tags, status: :ok
     end
+    
 end
