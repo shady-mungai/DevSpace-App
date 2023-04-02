@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
+import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { Link } from "react-router-dom";
 import "./Homepage.css"
 
 const HomePage = () => {
+    const [articles, setArticles] = useState([]);
+    const [text] = useTypewriter({
+        words: ["The Best Space For Developers.", "Full Support From Other Articles.", "Best Information In The Industry."],
+        loop: true,
+        typeSpeed: 20,
+        deleteSpeed: 10,
+        delaySpeed: 2000,
+      });
+    useEffect(() => {
+        fetch('http://localhost:3300/articles')
+          .then(response => response.json())
+          .then(data => {
+            setArticles(data.slice(1, 4)); 
+          })
+          .catch(error => {
+            console.log(error);
+          });
+      }, []);
     return (
         <>
         <div className="home">
@@ -15,6 +34,14 @@ const HomePage = () => {
             </div>
             <div className="main-content">
                 <h1>Publish Your Own Code Solutions</h1>
+                <h2 className="type">
+                    With <span>{text}</span>
+                    <Cursor
+                        cursorBlinking="false"
+                        cursorStyle="|"
+                        cursorColor="lightgray"
+                    />
+                </h2>
                 <Link to="/SignUp">Create Solution</Link>
             </div>
         </div>
@@ -41,69 +68,37 @@ const HomePage = () => {
             </div>
             
             <div className="cards">
-                <div className="card">
+                {
+                    articles.map((article)=>(
+                        <>
+                    <div className="card">
                     <div className="face face1">
                         <div className="content">
-                            <h1>Design</h1>
+                            <h1>Know more...</h1>
                             <img src={require('./assets/about.jpg')}/>
                             
                         </div>
                     </div>
                     <div className="face face2">
                         <div className="content">
-                            <p>Lorem ipsum dolor sit amet 
-                                consectetur adipisicing elit. Minima 
-                                tempore explicabo 
-                                repudiandae eos porr
+                            <p>
+                                {article.title}
                             </p>
-                            <Link to="/">Read More</Link>
+                            <Link to={`/articles/${article.id}`}>Read More</Link>
                         </div>
                     </div>
                 </div>
         
         
-                <div className="card">
-                    <div className="face face1">
-                        <div className="content">
-                            <h1>Design</h1>
-                            <img src={require('./assets/about.jpg')}/>
-                            
-                        </div>
-                    </div>
-                    <div className="face face2">
-                        <div className="content">
-                            <p>Lorem ipsum dolor sit amet 
-                                consectetur adipisicing elit. Minima 
-                                tempore explicabo 
-                                repudiandae eos porr
-                            </p>
-                            <Link to="/">Read More</Link>
-                        </div>
-                    </div>
-                </div>
+               
         
         
         
-                <div className="card">
-                    <div className="face face1">
-                        <div className="content">
-                            <h1>Design</h1>
-                            <img src={require('./assets/about.jpg')}/>
-                            
-                        </div>
-                    </div>
-                    <div className="face face2">
-                        <div className="content">
-                            <p>Lorem ipsum dolor sit amet 
-                                consectetur adipisicing elit. Minima 
-                                tempore explicabo 
-                                repudiandae eos porr
-                            </p>
-                            <Link to="/">Read More</Link>
-                        </div>
-                    </div>
-                </div>
-        
+                
+                        </>
+                    ))
+                }
+                
         
             </div>
         </div>
