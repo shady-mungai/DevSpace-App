@@ -53,11 +53,11 @@ const HomePage = () => {
             <div className="about-text">
                 <h1>About Us</h1>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis ut obcaecati aliquam dicta nam nesciunt ab. Voluptas nam, autem inventore sapiente earum facere quos ab numquam, dolor tenetur esse et.
+                Devspace is an application that provides a platform for developers to share and discover technical articles, tutorials, and code snippets. With Devspace, developers can create their own profiles, publish articles, and engage with a community of like-minded developers.
                 </p>
 
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis ut obcaecati aliquam dicta nam nesciunt ab. Voluptas nam, autem inventore sapiente earum facere quos ab numquam, dolor tenetur esse et.
+                The application is designed to promote knowledge sharing and collaboration among developers of all skill levels. By allowing developers to easily publish and find high-quality technical content, Devspace aims to make learning and building software more accessible and efficient.
                 </p>
             </div>
         </div>
