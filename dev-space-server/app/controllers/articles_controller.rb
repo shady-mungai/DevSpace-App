@@ -3,6 +3,8 @@ class ArticlesController < ApplicationController
   before_action :authorize
 
   #GET all articles
+class ArticlesController < ApplicationController
+  # before_action :authorize
 
     def index 
       articles = Article.all
@@ -19,6 +21,19 @@ class ArticlesController < ApplicationController
       end
     end
     
+  #GET all articles
+  def index 
+    articles = Article.all
+    render json: articles
+  end
+
+    def show
+      article = Article.find_by(id:params[:id])
+      if article
+        render json: article, status: :created
+      else
+        render json: {error: "article not found"},status: :not_found
+    end 
 
     # POST create a new article
     def create

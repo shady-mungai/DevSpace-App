@@ -15,7 +15,6 @@ body
     width: 100vw;
     display: flex;
     align-items: center;
-    background: url("./assets/bg2.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,6 +30,7 @@ body
     display: flex;
     flex-direction: column;
     position: relative;
+    background: url("./assets/bg2.jpg");
 }
 
 
@@ -83,7 +83,15 @@ body
     transition: .5s;
 
 }
-
+.type{
+    margin-top: -3rem;
+    font-size: 2.5rem;
+    color: lightgray;
+}
+.type span{
+    font-size: 2.5rem;
+    color: lightgray;
+}
 .nav
 {
     position: relative;
