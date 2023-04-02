@@ -6,14 +6,16 @@ import HomePage from "./components/HomePage"
 
 
 import './App.css';
+// import Articles from "./components/Articles";
 
 function App() {
   return (
     <div className="App">
-      <Routes> 
+      <Routes>
+        <Route exact path="/" element={<HomePage />}/> 
         <Route path="/Login" element={<Login />}/>
         <Route path="/SignUp" element={<SignUp />}/>
-        <Route exact path="/" element={<HomePage />}/>
+        {/* <Route path="/Articles" element={<Articles />} /> */}
       </Routes>
     </div>
   );
