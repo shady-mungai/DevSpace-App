@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     #POST to enable a user to login via finding user by email 
     #authentucating the user's password
     #storing their id via sessions
-    def login
+def login
         
         user = User.find_by(email: params[:email])
         if user&.authenticate(params[:password])
