@@ -9,7 +9,7 @@ const ArticlesId = () => {
 
   useEffect(() => {
     const fetchArticle = async () => {
-      const response = await fetch(`http://localhost:3300/articles/${id}`);
+      const response = await fetch(`https://dev-space-server-fodl.onrender.com/articles/${id}`);
       const data = await response.json();
       setArticle(data);
       setReviews(data.reviews);
