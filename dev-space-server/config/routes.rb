@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
  # post '/login',to: 'users#login'
    post '/signup',to: 'users#signup'
+
+   post '/changepassword',to: 'users#change'
+   
    delete "/logout", to: "sessions#logout"
    post "/login", to: "sessions#login"
    resources :tags, only:[:index]
