@@ -2,10 +2,13 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import './Library.css'
 import React, { useState, useEffect } from "react";
-
+let userId = localStorage.getItem('id')
 const Library = () => {
   const [articles, setArticles] = useState([]);
   const [editorValue, setEditorValue] = useState('');
+  const [title, setTitle] = useState("");
+;
+
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -27,14 +30,19 @@ const Library = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        title: 'New Article',
-        content: editorValue
+        title: title,
+        content: editorValue,
+        user_id: userId
+        
+        
       })
     });
     if (response.ok) {
       const data = await response.json();
       setArticles([...articles, data]);
       setEditorValue('');
+      setTitle('');
+     
     } else {
       console.log('Error creating article');
     }
@@ -54,13 +62,15 @@ const Library = () => {
       const data = await response.json();
       const updatedArticles = articles.map((article) => {
         if (article.id === data.id) {
-          return data;
+          return { ...data, content: data.content.replace(/<\/?p>/g,'') };
         } else {
           return article;
         }
       });
       setArticles(updatedArticles);
       setEditorValue('');
+      setTitle('');
+     
     } else {
       console.log('Error updating article');
     }
@@ -74,6 +84,8 @@ const Library = () => {
       const updatedArticles = articles.filter((article) => article.id !== articleId);
       setArticles(updatedArticles);
       setEditorValue('');
+      setTitle('');
+      
     } else {
       console.log('Error deleting article');
     }
@@ -87,6 +99,7 @@ const Library = () => {
         <button className="new-art-btn" onClick={handleNewArticle}>Add Article</button>
       </div>
       <div className="card-body">
+      <input type="text" placeholder="Enter article title" className='art-title' value={title}  onChange={(e) => setTitle(e.target.value)} />
         <ReactQuill className="quill" value={editorValue} onChange={setEditorValue} />
         {articles.length > 0 ? (
           <ul>
@@ -97,7 +110,7 @@ const Library = () => {
                     <h4>{article.title}</h4>
                   </div>
                   <div className="card-body">
-                    <div ><p>{article.content && article.content}</p></div>
+                  <div dangerouslySetInnerHTML={{ __html: article.content }}></div>
                     <button className="update-btn" onClick={() => handleUpdateArticle(article.id)}>Update</button>
                     <button className="delete-btn" onClick={() => handleDeleteArticle(article.id)}>Delete</button>
                   </div>

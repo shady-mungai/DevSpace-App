@@ -19,10 +19,7 @@ const Login = () => {
 
   const userLogin = async () => {
     const email = emailRef.current.value;
-    const password = passwordRef.current.value
     const user =  users.filter((user)=> user.email === email )
-    const userObject = Object.assign({},user)
-    console.log('user::::::::' +  user[0].id )
     if(user.length) {
     localStorage.setItem('email',user[0].email)
     localStorage.setItem('id', user[0].id)

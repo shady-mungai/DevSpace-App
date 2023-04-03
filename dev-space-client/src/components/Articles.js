@@ -4,8 +4,6 @@ import {  Link } from 'react-router-dom';
 import Profile from "./Profile";
 
 let userId = localStorage.getItem('id')
-let userEmail = localStorage.getItem('email')
-let userName = localStorage.getItem('username')
 const Articles = () => {
 
   
@@ -28,11 +26,18 @@ const Articles = () => {
   }, []);
   const filteredArticles = articles.filter((article) => {
     const titleMatch = article.title.toLowerCase().includes(searchQuery.toLowerCase());
+    const contentMatch = article.content.toLowerCase().includes(searchQuery.toLowerCase());
     const tagMatch = article.tags.some((tag) => tag.name.toLowerCase().includes(searchQuery.toLowerCase()));
-    const contentMatch = article.content && JSON.parse(article.content).some((content) => content.toLowerCase().includes(searchQuery.toLowerCase()));
     return titleMatch || tagMatch || contentMatch;
   });
 
+  const truncate = (str, maxLength) => {
+    if (str.length > maxLength) {
+      return str.substr(0, maxLength) + '...';
+    } else {
+      return str;
+    }
+  };
  useEffect(()=>{
     console.log(userId)
  },[])
@@ -54,19 +59,19 @@ const Articles = () => {
       </header>
       <div className="main-body">
         <div className="tags">
-          <a href="#">Front-End</a>
-          <a href="#">Coding</a>
-          <a href="#">Software development</a>
-          <a href="#">Back-end</a>
-          <a href="#">Fullstack</a>
-          <a href="#">Javascript</a>
+          <Link to='/Articles'>Front-End</Link>
+          <Link to='/Articles'>Coding</Link>
+          <Link to='/Articles'>Software development</Link>
+          <Link to='/Articles'>Back-end</Link>
+          <Link to='/Articles'>Fullstack</Link>
+          <Link to='/Articles'>Javascript</Link>
         </div>
         
         <div className="articles">
           {filteredArticles.map((article) => (
             <div className="article" key={article.id}>
               <div className="article-profile">
-                <img src="" alt="icon" />
+                
                 <h3 className="name">{article.user.username}</h3>
                 
               </div>
@@ -75,7 +80,7 @@ const Articles = () => {
                   <Link to={`/articles/${article.id}`}>{article.title}</Link>
                 </h1>
                 <p className="content">
-                {article.content && JSON.parse(article.content)}
+                <div dangerouslySetInnerHTML={{ __html: truncate(article.content, 150) }}></div>
                   </p>
 
               <p>
@@ -88,8 +93,8 @@ const Articles = () => {
                   {article.tags.map((tag) => (
                     <p className="tag" key={tag.id}>{tag.name}</p>
                   ))}
+                
                 </div>
-                <p>6 min read</p>
               </footer>
             </div>
           ))}

@@ -56,6 +56,17 @@
     transition: .5s;
 
 }
+.art-title{
+    background: transparent;
+    color: #fff;
+    font-size: 1.3rem;
+    padding: .3rem;
+    border: none;
+    width: 100%;
+    outline: none;
+    margin-bottom: .5rem;
+    border-bottom: 1px solid lightgray;
+}
 .delete-btn
 {
     color: #fff;

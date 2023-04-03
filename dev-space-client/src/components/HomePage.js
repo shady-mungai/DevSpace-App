@@ -48,7 +48,7 @@ const HomePage = () => {
 
         <div className="container2">
             <div className="about-img">
-                <img src={require('./assets/about.jpg')}/>
+                <img src={require('./assets/about.jpg')} alt='homepage'/>
             </div>
             <div className="about-text">
                 <h1>About Us</h1>
@@ -75,7 +75,7 @@ const HomePage = () => {
                     <div className="face face1">
                         <div className="content">
                             <h1>Know more...</h1>
-                            <img src={require('./assets/about.jpg')}/>
+                            <img src={require('./assets/about.jpg')} alt='know more'/>
                             
                         </div>
                     </div>
@@ -88,14 +88,7 @@ const HomePage = () => {
                         </div>
                     </div>
                 </div>
-        
-        
-               
-        
-        
-        
-                
-                        </>
+                </>
                     ))
                 }
                 

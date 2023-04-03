@@ -1,5 +1,5 @@
 import React from "react";
-let userId = localStorage.getItem('id')
+import './ProfileOwner.css'
 let userEmail = localStorage.getItem('email')
 let userName = localStorage.getItem('username')
 const ProfileOwner = () => {
@@ -7,9 +7,10 @@ const ProfileOwner = () => {
 
   return (
     <>
-    <div>{userId}</div>
-    <div>{userEmail}</div>
-    <div>{userName}</div>
+    <div className="profileri">
+      <div className="email">{userEmail}</div>
+      <div className="password">{userName}</div>
+    </div>
     </>
   )
 }
