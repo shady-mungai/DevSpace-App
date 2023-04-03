@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     def signup 
         user = User.create!(prod_params)
         if user
-            WelcomeMailer.welcome_email(user).deliver_now
+            WelcomeMailer.welcome_email(user).deliver_later 
             #sign up to login 
             #session[:user_id] = user.id
             render json: user, status: :created
