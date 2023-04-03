@@ -13,6 +13,17 @@ class UsersController < ApplicationController
 
     end
 
+    def change
+    
+      user = User.find_by(email: params[:email])
+        if user 
+            user.update(password: params[:password])
+            render json: user, status: :ok
+        else 
+            render json: {error: "Invalid email"}, status: :not_found
+        end
+    end
+
     # sign up to the application by creating your data to our db
 
     def signup 

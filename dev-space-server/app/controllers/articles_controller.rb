@@ -1,10 +1,5 @@
-class ArticlesController < ApplicationController 
-
-  before_action :authorize
-
-  #GET all articles
 class ArticlesController < ApplicationController
-  # before_action :authorize
+   #before_action :authorize
 
     def index 
       articles = Article.all
@@ -34,10 +29,12 @@ class ArticlesController < ApplicationController
       else
         render json: {error: "article not found"},status: :not_found
     end 
+  end
 
     # POST create a new article
     def create
-      article = user.articles.create!(article_params)
+      #article = user.articles.create!(article_params)
+      article = Article.create(article_params)
       if article
         render json: article,status: :created
       else
@@ -71,6 +68,6 @@ class ArticlesController < ApplicationController
   
     private
     def article_params
-      params.permit(:title,:topic_language,:content)
+      params.permit(:title,:topic_language,:content,:user_id)
     end
-end
+  end

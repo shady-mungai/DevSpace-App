@@ -8,7 +8,7 @@ class ApplicationController < ActionController::API
     def save_user(id)
         session[:uid] = id
     end
-    end   
+  
     
     def authorize
         render json: { error: "Not authorized" }, status: 401 unless session.include? :user_id
