@@ -10,7 +10,7 @@ const SignUp = () => {
   const usernameRef = useRef();
 
   const userSignup = async () => {
-    const response = await fetch('http://localhost:3300/signup', {
+    const response = await fetch('https://dev-space-server-fodl.onrender.com/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

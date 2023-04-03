@@ -13,7 +13,7 @@ const Articles = () => {
   useEffect(() => {
     
     const fetchArticles = async () => {
-      const response = await fetch('http://localhost:3300/articles?_embed=tags');
+      const response = await fetch('https://dev-space-server-fodl.onrender.com/articles?_embed=tags');
       if (response.ok) {
         const data = await response.json();
         setArticles(data);

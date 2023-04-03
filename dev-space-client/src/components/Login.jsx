@@ -9,7 +9,7 @@ const Login = () => {
   const passwordRef = useRef();
   
   useEffect(()=>{
-    fetch('http://localhost:3300/users')
+    fetch('https://dev-space-server-fodl.onrender.com/users')
     .then((res)=>res.json())
     .then((data)=>{
       setUsers(data)
@@ -24,7 +24,7 @@ const Login = () => {
     localStorage.setItem('email',user[0].email)
     localStorage.setItem('id', user[0].id)
     localStorage.setItem('username', user[0].username)
-    const response = await fetch('http://localhost:3300/login', {
+    const response = await fetch('https://dev-space-server-fodl.onrender.com/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -36,7 +36,7 @@ const Login = () => {
     });
 
     if (response.ok) {
-          fetch('http://localhost:3300/users')
+          fetch('https://dev-space-server-fodl.onrender.com/users')
           .then(response => response.json())
           .then(data => {
             console.log(data);

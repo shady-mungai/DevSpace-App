@@ -12,7 +12,7 @@ const Library = () => {
 
   useEffect(() => {
     const fetchArticles = async () => {
-      const response = await fetch('http://localhost:3300/articles');
+      const response = await fetch('https://dev-space-server-fodl.onrender.com/articles');
       if (response.ok) {
         const data = await response.json();
         setArticles(data);
@@ -24,7 +24,7 @@ const Library = () => {
   }, []);
 
   const handleNewArticle = async () => {
-    const response = await fetch('http://localhost:3300/articles', {
+    const response = await fetch('https://dev-space-server-fodl.onrender.com/articles', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -49,7 +49,7 @@ const Library = () => {
   }
 
   const handleUpdateArticle = async (articleId) => {
-    const response = await fetch(`http://localhost:3300/articles/${articleId}`, {
+    const response = await fetch(`https://dev-space-server-fodl.onrender.com/articles/${articleId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -77,7 +77,7 @@ const Library = () => {
   }
 
   const handleDeleteArticle = async (articleId) => {
-    const response = await fetch(`http://localhost:3300/articles/${articleId}`, {
+    const response = await fetch(`https://dev-space-server-fodl.onrender.com/articles/${articleId}`, {
       method: 'DELETE'
     });
     if (response.ok) {

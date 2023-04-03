@@ -7,7 +7,7 @@ const SignOut = () => {
   const navigate = useNavigate();
 
   const handleSignOut = async () => {
-    const response = await fetch('http://localhost:3300/logout', {
+    const response = await fetch('https://dev-space-server-fodl.onrender.com/logout', {
       method: 'DELETE'
     });
     if (response.ok) {

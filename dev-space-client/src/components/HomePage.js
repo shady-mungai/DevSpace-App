@@ -13,7 +13,7 @@ const HomePage = () => {
         delaySpeed: 2000,
       });
     useEffect(() => {
-        fetch('http://localhost:3300/articles')
+        fetch('https://dev-space-server-fodl.onrender.com/articles')
           .then(response => response.json())
           .then(data => {
             setArticles(data.slice(1, 4)); 
