@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Login from "./components/Login";
+import SignUp from "./components/SignUp";
+import HomePage from "./components/HomePage";
 import './App.css';
+import Articles from "./components/Articles";
+import ArticlesId from "./components/ArticlesId";
+import Profile from "./components/Profile";
+import Library from "./components/Library";
+import ProfileOwner from "./components/ProfileOwner";
+import SignOut from "./components/SignOut";
+// import PrivateRoutes from "./components/PrivateRoutes";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route exact path="/" element={<HomePage />}/> 
+        <Route path="/Login" element={<Login />}/>
+        <Route path="/SignUp" element={<SignUp />}/>
+        {/* <Route element={<PrivateRoutes />}>
+          
+        </Route> */}
+        <Route path="/Articles" element={<Articles />} /> 
+          <Route path="/articles/:id" element={<ArticlesId />} />
+          <Route path="/Profile" element={<Profile />} />
+          <Route path="/Library" element={<Library />} />
+          <Route path="/ProfileOwner" element={<ProfileOwner />} />
+          <Route path="/SignOut" element={<SignOut />} />
+      </Routes>
     </div>
   );
 }

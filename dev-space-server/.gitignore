@@ -1,0 +1,15 @@
+<<<<<<< HEAD
+/tmp
+/log
+/db
+=======
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+# Ignore pidfiles, but keep the directory.
+/tmp/pids/*
+!/tmp/pids/
+!/tmp/pids/.keep
+>>>>>>> 62099abee15e1a8a5c1d0afa7d5b10783e9a7fa4
